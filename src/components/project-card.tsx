@@ -1,5 +1,4 @@
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
-import { Spotlight } from "./ui/spotlight";
 
 interface ProjectCardProps {
     title: string;
@@ -23,10 +22,6 @@ export default function ProjectCard (props: ProjectCardProps) {
                             src={image}
                             className="object-cover w-full rounded-lg"
                             alt="thumbnail"
-                        />
-                        <Spotlight
-                            className="top-0 left-36"
-                            fill="white"
                         />
                     </div>
                 </CardItem>

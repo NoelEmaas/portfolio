@@ -27,13 +27,13 @@ import TyperistImg from './assets/images/typerist_img.png';
 import PokedexImg from './assets/images/pokedex_img.png';
 import AmazonImg from './assets/images/amazon_img.png';
 
-import AnzenUI from './assets/images/anzen_ui_mock.jpeg';
-import EskolarUI from './assets/images/eskolar_ui_mock.jpeg';
-import FlavorshareUI from './assets/images/flavorshare_ui_mock.jpeg';
-import JobUI from './assets/images/job_ui_mock.jpeg';
-import MediguideUI from './assets/images/mediguide_ui_mock.jpeg';
-import StubuUI from './assets/images/stubu_ui_mock.jpeg';
-import Stubu2UI from './assets/images/stubu2_ui_mock.jpeg';
+import AnzenUI from './assets/images/anzen_ui_mock.png';
+import EskolarUI from './assets/images/eskolar_ui_mock.png';
+import FlavorshareUI from './assets/images/flavorshare_ui_mock.png';
+import JobUI from './assets/images/job_ui_mock.png';
+import MediguideUI from './assets/images/mediguide_ui_mock.png';
+import StubuUI from './assets/images/stubu_ui_mock.png';
+import Stubu2UI from './assets/images/stubu2_ui_mock.png';
 
 import {
   Carousel,
