@@ -193,7 +193,7 @@ function App() {
 
   return (
     <>
-        <div className={`w-full top-0 left-0 right-0 h-[75px] bg-[#0F0F0F] border-0 border-b border-[#1f1f1f] fixed z-50 bg-opacity-80 backdrop-blur-md  transition-transform duration-300  ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className={`w-full top-0 left-0 right-0 h-[75px] bg-[#0F0F0F] border-0 border-b border-[#1f1f1f] fixed z-50 bg-opacity-80 backdrop-blur-md  transition-transform duration-300 drop-shadow-lg  ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
           <div className='container px-[15%] mx-auto flex items-center h-full justify-between'>
             <div className='flex items-center gap-x-1'>
               <img
@@ -213,7 +213,7 @@ function App() {
             <div>
               <button className="
                 relative inline-flex h-10 px-4 py-2 rounded-lg animate-shimmer items-center justify-center border 
-                border-[#1f1f1f] bg-[linear-gradient(110deg,#171717,45%,#263b36,55%,#171717)] bg-[length:200%_100%] 
+                border-[#1f1f1f] bg-[linear-gradient(110deg,#171717,45%,#1f2b2e,55%,#171717)] bg-[length:200%_100%] 
                 text-gray-300 transition-all focus:outline-none focus:ring-2 font-semibold
                 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 text-xs gap-x-2
                 overflow-hidden group
@@ -229,7 +229,7 @@ function App() {
         </div>
 
         {/* Header Section */}
-        <div className='fixed top-0 w-full'>
+        <div className='fixed top-0 w-full shadow-inner'>
           <AuroraBackground>
             <motion.div
               initial={{ opacity: 0.0, y: 40 }}
@@ -241,11 +241,11 @@ function App() {
               }}
               className="container px-[15%]"
             >
-              <div className=''>
-                <h1 className='sub-text'> I am Noel Emaas, </h1> 
+              <div>
+                <h1 className='text-lg font-light sub-text'>I am <span className='text-white bold'>Noel Emaas,</span> </h1> 
                 <div className='flex items-end justify-between w-full'>
-                  <div className="mt-[20px]">
-                    <h1 className="text-xl bold title">
+                  <div className="mt-[40px] flex flex-col gap-y-1">
+                    <h1 className="text-2xl bold title">
                       Software developer
                     </h1>
                     <p className="sub-color sub-text">
@@ -253,14 +253,14 @@ function App() {
                     </p>
                   </div>
                   <div className='flex gap-x-2'>
-                    <Button className='hover:bg-[#262626] bg-[#171717] border-[#1f1f1f] rounded-lg' variant="outline" size="icon">
+                    <Button className='hover:bg-[#262626] drop-shadow-lg bg-[#171717] border-[#1f1f1f] rounded-lg' variant="outline" size="icon">
                       <Linkedin className="w-4 h-4 text-white"/>
                     </Button>
-                    <Button className='hover:bg-[#262626] bg-[#171717] border-[#1f1f1f] rounded-lg' variant="outline" size="icon">
+                    <Button className='hover:bg-[#262626] drop-shadow-lg bg-[#171717] border-[#1f1f1f] rounded-lg' variant="outline" size="icon">
                       <Github className="w-4 h-4 text-white"/>
                     </Button>
                     <Button 
-                      className="group bg-gradient-to-r to-[#599084] from-[#0E454E] border-[#0a0c0c] rounded-lg font-semibold hover:text-white text-sm gap-x-2 transition-all duration-300 ease-in-out"
+                      className="shadow-sm group bg-gradient-to-r drop-shadow-lg to-[#2A3F60] from-[#50666a] border-none rounded-lg font-semibold hover:text-white text-sm gap-x-2 transition-all duration-300 ease-in-out"
                       variant="outline"
                     >
                       <span className="w-0 overflow-hidden transition-all duration-300 ease-in-out opacity-0 group-hover:w-4 group-hover:opacity-100">
@@ -275,7 +275,7 @@ function App() {
           </AuroraBackground>
         </div>
 
-        <div className="w-full py-[5%] border-0 border-t border-[#1f1f1f] bg-[#080808] relative mt-[25%]">
+        <div className="w-full py-[5%] border-0 border-t border-[#1f1f1f] bg-[#080808] relative mt-[25%] drop-shadow-lg">
           <div className='container px-[15%] mx-auto flex flex-col gap-y-28'>
             {/* Works Section */}
             <div>

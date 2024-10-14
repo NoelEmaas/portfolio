@@ -106,7 +106,7 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "aurora": "aurora 60s linear infinite",
-        "shimmer": "shimmer 2s linear infinite",
+        "shimmer": "shimmer 3s linear infinite",
         'slide-left-infinite': 'slide-left 50s linear infinite',
         "spotlight": "spotlight 2s ease .75s 1 forwards",
       },
