@@ -1,44 +1,48 @@
+import { ArrowRight } from "lucide-react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 
 interface ProjectCardProps {
     title: string;
-    titleColor?: string;
-    imgageContainerStyle?: string;
+    imagePadding?: string;
+    imageStyle?: string;
+    hoverGradient?: string;
     description: string;
     image: string;
     link: string;
 }
 
 export default function ProjectCard (props: ProjectCardProps) {
-    const { title, titleColor, imgageContainerStyle, description, image, link } = props;
+    const { title, imagePadding, imageStyle, hoverGradient, description, image } = props;
 
     return (
-        <CardContainer className="transition-all duration-300 cursor-pointer group">
-            <CardBody className="bg-[#0f0f0f] relative group/card w-auto h-auto rounded-lg p-6 border border-[#1f1f1f]">
-                <CardItem translateZ="100" className="w-full">
-                    <div className={`transition-all group-hover:bg-gradient-to-br from-transparent to-transparent rounded-lg h-[300px] bg-transparent bg-grid-small-[#1f1f1f] relative flex items-center justify-center overflow-hidden border border-[#1f1f1f] ${imgageContainerStyle}`}>
-                        <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-[#080808] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] z-[-10]"></div>
-                        <img
-                            src={image}
-                            className="object-cover w-full rounded-lg"
-                            alt="thumbnail"
-                        />
-                    </div>
-                </CardItem>
-                <CardItem
-                    translateZ="50"
-                    className={`mt-4 ${titleColor} bold text`}
-                >
-                    {title}
-                </CardItem>
-                <CardItem
-                    as="p"
-                    translateZ="60"
-                    className="max-w-sm mt-2 text-sm sub-color sub-text"
-                >
-                    {description}
-                </CardItem>
-            </CardBody>
-        </CardContainer>
+        <div className="flex flex-col w-full duration-500 shadow-xl drop-shadow-xl group">
+        <div className="h-[500px] w-full bg-[#131313] rounded-xl p-3 border border-[#1f1f1f] relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-[0.4px] bg-gradient-to-r from-[#0f0f0f] via-[#5f5f5f] to-[#0f0f0f]" />
+          <div className="relative h-full rounded-lg border border-[#1f1f1f] group-hover:border-[#2f2f2f] overflow-hidden">
+            {/* Base gradient layer */}
+            <div className="absolute inset-0 transition-opacity duration-500 ease-in-out bg-gradient-to-br from-[#1f1f1f] to-[#080808] group-hover:opacity-0" />
+            
+            {/* Hover gradient layer */}
+            <div className={`absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 bg-gradient-to-br ${hoverGradient} group-hover:opacity-100`}/>
+            
+            {/* Content */}
+            <div className={`relative h-full p-[40px] flex flex-col items-center justify-center cursor-pointer ${imagePadding}`}>
+              <div className="absolute top-0 left-0 right-0 h-[0.4px] bg-gradient-to-r from-[#1f1f1f] via-[#5f5f5f] to-[#0e0e0e] group-hover:from-transparent group-hover:to-transparent" />
+              <div className="absolute top-0 left-0 flex items-center justify-between w-full px-6 pt-2 mt-3">
+                <div>
+                    <h1 className="bold text">{title}</h1>
+                    <p className="text-sm sub-color sub-text">{description}</p>
+                </div>
+                <ArrowRight className="w-6 h-6 mr-2 duration-300 ease-out text-white/50 group-hover:mr-0"/>
+              </div>
+              <img
+                src={image}
+                className={`object-cover w-full mt-20 duration-300 ease-out rounded-lg group-hover:mt-14 group-hover:scale-110 brightness-75 group-hover:brightness-100 ${imageStyle}`}
+                alt="thumbnail"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     );
 }

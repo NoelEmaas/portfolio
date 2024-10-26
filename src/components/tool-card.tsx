@@ -11,7 +11,7 @@ export default function ToolCard (props: ToolCardProps) {
     const { title, description, icon, iconStyle } = props;
 
     return (
-        <div className="group bg-[#0f0f0f] flex flex-col rounded-lg p-4 gap-y-2 z-50 relative border border-[#212121] overflow-hidden shadow-inner">
+        <div className="group bg-[#0f0f0f] flex flex-col rounded-lg p-4 gap-y-2 z-50 relative border border-[#141414] border-t-[#303030] drop-shadow-lg overflow-hidden shadow-sm">
             <div className='flex items-center gap-x-2'>
                 <h1 className="font-medium">{title}</h1>
                 <ArrowUpRight 
