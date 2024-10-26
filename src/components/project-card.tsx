@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 
 interface ProjectCardProps {
     title: string;
@@ -37,7 +36,7 @@ export default function ProjectCard (props: ProjectCardProps) {
               </div>
               <img
                 src={image}
-                className={`object-cover w-full mt-20 duration-300 ease-out rounded-lg group-hover:mt-14 group-hover:scale-110 brightness-75 group-hover:brightness-100 ${imageStyle}`}
+                className={`object-cover w-full mt-20 duration-300 ease-out rounded-lg group-hover:mt-14 brightness-75 group-hover:brightness-100 ${imageStyle}`}
                 alt="thumbnail"
               />
             </div>

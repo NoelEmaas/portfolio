@@ -9,7 +9,7 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
   return (
     <svg
       className={cn(
-        "animate-spotlight pointer-events-none absolute z-[1]  h-[200%] w-[150%] lg:w-[84%] opacity-0",
+        "animate-spotlight pointer-events-none absolute z-[1]  h-[180%] w-[150%] lg:w-[84%] opacity-0",
         className
       )}
       xmlns="http://www.w3.org/2000/svg"
@@ -45,8 +45,7 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
             result="shape"
           ></feBlend>
           <feGaussianBlur
-            stdDeviation="151"
-            result="effect1_foregroundBlur_1065_8"
+            stdDeviation="300"
           ></feGaussianBlur>
         </filter>
       </defs>

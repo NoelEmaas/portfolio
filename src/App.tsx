@@ -4,11 +4,12 @@ import Projects from './components/projects';
 import OtherProjects from './components/other-projects';
 import Stack from './components/stack';
 import CustomFooter from './components/custom-footer';
+import SmoothScroll from './components/smooth-scroll';
 
 
 function App() {
   return (
-    <>
+    <SmoothScroll>
         <CustomHeader />
         <Hero />
         <Stack />
@@ -24,7 +25,7 @@ function App() {
         </div>
         <CustomFooter />
 
-    </>
+    </SmoothScroll>
   );
 }
 
