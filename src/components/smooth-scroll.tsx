@@ -7,7 +7,7 @@ interface SmoothScrollProps {
 const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
     const lenisOptions = {
         lerp: 0.1,
-        duration: 1.5,
+        duration: 1,
         smoothTouch: false,
         smooth: true,
     };

@@ -89,12 +89,12 @@
   }
 
   .grain-bg::after {
-    content:"";
-    background-image:url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png");
-    height: 100%;
+    content: "";
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png");
     width: 100%;
+    height: 100%;
     position: fixed;
-    opacity:0.025;
+    opacity: 0.025;
   }
 
   .animation-pause {

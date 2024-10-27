@@ -1,21 +1,22 @@
 import { Button } from "@/components/ui/button"
 import { AtSign, Github, Linkedin } from "lucide-react";
 
+interface HeroProps {
+  hidden?: boolean;
+}
 
-export default function Hero() {
+export default function Hero({ hidden = false }: HeroProps) {
     return (
-      <div className='fixed top-0 w-full shadow-inner flex flex-col items-center justify-center bg-[#080808] bg-grid-white/[0.02] pb-[8%]'>
-        <div className="absolute w-full h-full grain-bg"/>
-        <div className="container px-[10%] pt-[calc(8%_+_60px)]">
-          <h1 className='text-lg font-light sub-text'>I am <span className='text-white bold'>Noel Emaas,</span> </h1> 
-          <div className='flex items-end justify-between w-full'>
-            <div className="mt-[40px] flex flex-col gap-y-1">
-              <h1 className="text-2xl bold title drop-shadow-lg shadow-white">
+      <div className={`${hidden ? 'hidden' : 'flex'} absolute top-0 w-full shadow-inner h-1/2 flex-col items-center justify-center bg-gradient-to-br from-[#1f1f1f] to-[#080808] z-10`}>
+        <div className="container px-[10%] fixed pt-[5%]">
+          <h1 className='text-lg font-light text-gray-200'>Hi! I am <span className='text-white bold'>Noel Emaas.</span> </h1> 
+          <div className='z-40 flex items-end justify-between w-full'>
+            <div className="pt-[4%] flex flex-col gap-y-1">
+              <h1 className="text-4xl bold title drop-shadow-lg text-glow-white/40">
                 Software developer
               </h1>
               <p className="sub-color sub-text">
                 I design & build web and mobile apps with the latest tech.
-                {/* I can code and I am good at it. Don't believe me? <br/> Scroll down and see for yourself. */}
               </p>
             </div>
             <div className='flex gap-x-2'>

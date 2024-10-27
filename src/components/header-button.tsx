@@ -12,11 +12,11 @@ export default function HeaderButton(props: HeaderButtonProps) {
     return (
         <Button 
             className={`
-                relative text-xs rounded-lg font-semibold
+                relative text-xs rounded-full font-semibold
                 transition-colors duration-300 ease-in-out
-                group overflow-hidden
+                group overflow-hidden py-0
                 ${active 
-                    ? 'text-white bg-[#171717] border border-[#1f1f1f] hover:text-white hover:bg-[#171717] hover:border hover:border-[#1f1f1f]' 
+                    ? 'text-white text-glow-white/50 bg-[#1f1f1f] border border-[#1f1f1f] hover:text-white hover:bg-[#171717] hover:border hover:border-[#1f1f1f]' 
                     : 'text-[#8c8c8c] bg-transparent hover:text-white hover:bg-[#171717]'
                 }
             `}
@@ -25,21 +25,11 @@ export default function HeaderButton(props: HeaderButtonProps) {
             <span 
                 className={`
                     relative z-10 transition-colors duration-300 ease-in-out
-                    ${active ? '' : 'group-hover:text-white group-hover:delay-500'}
+                    ${active ? '' : 'group-hover:text-white'}
                 `}
             >
                 {children}
             </span>
-            {!active && (
-                <span 
-                    className="
-                    absolute inset-0 border border-[#1f1f1f] rounded-lg
-                    opacity-0 group-hover:opacity-100
-                    scale-0 group-hover:scale-100
-                    transition-all duration-700 ease-in-out
-                    "
-                />
-            )}
         </Button>
     );
 }

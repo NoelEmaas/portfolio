@@ -9,8 +9,9 @@ import MediguideMock from '../assets/images/mediguide_mock.png';
 
 export default function Projects () {
     return (
-      <div className="w-full py-[5%] border-0 border-t border-[#1f1f1f] bg-[#101010] relative drop-shadow-lg">
-        <div className='container px-[10%] mx-auto flex flex-col gap-y-32'>
+      <div className={`w-full border-0 border-[#1f1f1f] bg-[#101010] transition-all duration-300 drop-shadow-lg z-0 sticky top-0`}>
+        <div className="absolute w-full h-full grain-bg"/>
+        <div className='container py-[5%] pt-[calc(16vh)] px-[10%] mx-auto flex flex-col gap-y-32 sticky'>
           <div>
             <div className='mb-10'>
               <h1 className="text-lg bold">Highlighted Projects</h1>
@@ -69,6 +70,7 @@ export default function Projects () {
                 link='#'
               />
             </div>
+            <div className='w-full relative h-[1100px]'/>
           </div>
         </div>
       </div>

@@ -88,7 +88,7 @@ const otherProjects: OtherProject[] = [
 
 export default function OtherProjects () {
     return (
-      <div className='bg-[#0d0d0d] w-full relative border-0 border-t border-b border-[#1f1f1f]'>
+      <div className='bg-[#0d0d0d] w-full relative border-0 border-t border-[#1f1f1f] min-h-[calc(100vh-200px)] flex items-center'>
         <div className='w-full py-[5%] px-[10%] container relative'>
           <div className='mb-10'>
             <h1 className="text-lg bold">Additional Works</h1>
@@ -130,7 +130,7 @@ export default function OtherProjects () {
             <hr className='border-[#1f1f1f] border-dashed w-full grow'/>
           </div>
 
-          <div className='w-full flex items-center justify-between rounded-md bg-transparent h-[140px] border border-[#141414] border-t-[#303030] drop-shadow-lg shadow-sm mt-4 p-4 bg-[#111111] hover:bg-[#0f0f0f] hover:border-solid transition-all duration-300 cursor-pointer group'>
+          <div className='w-full flex items-center justify-between rounded-md h-[140px] border border-[#141414] border-t-[#303030] drop-shadow-lg shadow-sm mt-4 p-4 bg-[#111111] hover:bg-[#0f0f0f] transition-all duration-300 cursor-pointer group'>
             <div className='flex flex-col justify-between h-full grow'>
               <div className='flex items-center gap-x-4'>
                   <img src={FigmaIcon} className='h-5' alt="" />

@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-
 const svgToDataUri = require("mini-svg-data-uri");
- 
 const colors = require("tailwindcss/colors");
 
 const {
@@ -114,6 +112,7 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-animate"), 
+    require("twglow"),
     addVariablesForColors,
     function ({ matchUtilities, theme }) {
       matchUtilities(
