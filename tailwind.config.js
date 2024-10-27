@@ -99,8 +99,17 @@ module.exports = {
             transform: "translate(-50%,-40%) scale(1)",
           },
         },
+        wave: {
+          '0%, 100%': {
+            'clip-path': 'polygon(0% 75%, 16% 74%, 33% 80%, 54% 85%, 70% 81%, 84% 79%, 100% 82%, 100% 100%, 0% 100%)',
+          },
+          '50%': {
+            'clip-path': 'polygon(0% 80%, 15% 85%, 34% 86%, 51% 82%, 67% 75%, 84% 75%, 100% 76%, 100% 100%, 0% 100%)',
+          },
+        },
       },
       animation: {
+        "wave": 'wave 4s ease-in-out infinite',
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "aurora": "aurora 60s linear infinite",

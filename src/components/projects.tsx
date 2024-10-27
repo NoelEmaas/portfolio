@@ -10,7 +10,6 @@ import MediguideMock from '../assets/images/mediguide_mock.png';
 export default function Projects () {
     return (
       <div className={`w-full border-0 border-[#1f1f1f] bg-[#101010] transition-all duration-300 drop-shadow-lg z-0 sticky top-0`}>
-        <div className="absolute w-full h-full grain-bg"/>
         <div className='container py-[5%] pt-[calc(16vh)] px-[10%] mx-auto flex flex-col gap-y-32 sticky'>
           <div>
             <div className='mb-10'>
@@ -43,7 +42,7 @@ export default function Projects () {
                 image={AgriconMock}
                 link='#'
               />
-              <ProjectCard
+              {/* <ProjectCard
                 title='FlavorShare'
                 imagePadding='p-[40px]'
                 imageStyle='border border-[#2f2f2f] rounded-lg shadow-lg drop-shadow-lg'
@@ -51,15 +50,15 @@ export default function Projects () {
                 description='Recipe sharing platform'
                 image={RecipeMock}
                 link='#'
-              />
-              <ProjectCard
+              /> */}
+              {/* <ProjectCard
                 title='MediGuide'
                 imagePadding='p-[80px]'
                 hoverGradient='to-[#115885] from-[#072436]'
                 description='Medical consultation platform'
                 image={MediguideMock}
                 link='#'
-              />
+              /> */}
               <ProjectCard
                 title='Stubu.AI'
                 imagePadding='p-[10px]'
@@ -70,7 +69,7 @@ export default function Projects () {
                 link='#'
               />
             </div>
-            <div className='w-full relative h-[1100px]'/>
+            <div className='w-full relative h-[1150px]'/>
           </div>
         </div>
       </div>

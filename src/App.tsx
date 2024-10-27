@@ -6,7 +6,6 @@ import Stack from './components/stack';
 import CustomFooter from './components/custom-footer';
 import SmoothScroll from './components/smooth-scroll';
 import { useEffect, useRef, useState } from 'react';
-import BottomGradient from './components/bottom-gradient';
 
 
 function App() {

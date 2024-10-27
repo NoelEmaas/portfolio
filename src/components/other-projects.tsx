@@ -88,7 +88,7 @@ const otherProjects: OtherProject[] = [
 
 export default function OtherProjects () {
     return (
-      <div className='bg-[#0d0d0d] w-full relative border-0 border-t border-[#1f1f1f] min-h-[calc(100vh-200px)] flex items-center'>
+      <div className='bg-[#0d0d0d] w-full relative border-0 border-t py-[20px] border-[#1f1f1f] flex items-center'>
         <div className='w-full py-[5%] px-[10%] container relative'>
           <div className='mb-10'>
             <h1 className="text-lg bold">Additional Works</h1>

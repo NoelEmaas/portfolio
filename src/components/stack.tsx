@@ -31,7 +31,7 @@ const tools: Tool[] = [
     },
     {
         title: 'Tailwind CSS',
-        description: 'Utility-first CSS framework',
+        description: 'CSS framework',
         link: 'https://tailwindcss.com/',
         icon: TailwindIcon,
         iconStyle: 'w-16 bottom-2 -right-2 brightness-75'
@@ -75,7 +75,7 @@ interface StackProps {
 export default function Stack ({stackRef}: StackProps) {
     return (
         <div ref={stackRef} className='bg-[#0d0d0d] w-full absolute flex items-center top-0 mt-[50vh] h-1/2 border-0 border-b border-t border-[#1f1f1f] z-40'>
-          <div className='w-full relative container px-[10%] bg-[#0d0d0d] z-0'>
+          <div className='w-full relative container lg:px-[10%] sm:px-[5%] px-10 bg-[#0d0d0d] z-0'>
             <div className='mb-10'>
               <h1 className="text-lg bold">Stack</h1>
               <p className='sub-text sub-color'>Tools & frameworks I am proficient with.</p>
