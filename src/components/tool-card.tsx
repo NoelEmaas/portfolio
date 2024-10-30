@@ -18,10 +18,10 @@ export default function ToolCard (props: ToolCardProps) {
                     className="w-4 h-4 text-white transition-all duration-300 ease-in-out scale-50 translate-x-0 translate-y-1 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-1 group-hover:translate-y-0"
                 />
             </div>
-            <p className="text-sm sub-color">{description}</p>
+            <p className="text-sm sub-color line-clamp-1">{description}</p>
             <img 
                 src={icon} 
-                className={`absolute ${iconStyle} grayscale opacity-10 transition-all duration-300 ease-in-out group-hover:grayscale-0 group-hover:brightness-100 group-hover:opacity-100`}
+                className={`absolute ${iconStyle} sm:grayscale opacity-10 transition-all duration-300 ease-in-out group-hover:grayscale-0 group-hover:brightness-100 group-hover:opacity-100`}
                 alt="React Icon" 
             />
         </div>

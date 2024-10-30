@@ -1,25 +1,30 @@
 import { Download, FileText } from "lucide-react";
 import HeaderButton from "./header-button";
 import logo from '@/assets/images/logo.png';
+import { useLocation } from "react-router-dom";
 
 
 export default function CustomHeader () {
+  const location = useLocation();
+
+  console.log(location);
+
     return (
-        <div className={`w-full top-0 left-0 right-0 h-[120px] bg-gradient-to-b from-[#0f0f0f] to-transparent fixed z-50 bg-opacity-80 transition-transform duration-300 drop-shadow-lg`}>
-        <div className='max-md:container relative z-50 flex items-center justify-between h-full mx-auto xl:px-32 lg:px-[9%] px-5'>
-          <div className='flex items-center gap-x-1'>
+      <div className={`w-full top-0 left-0 right-0 h-[120px] bg-easing-b-header fixed z-50 bg-opacity-80 transition-transform duration-300 drop-shadow-lg`}>
+        <div className='relative z-50 flex items-center justify-between h-full xl:px-36 lg:px-[12%] sm:px-[5%] px-5'>
+          <div className='flex items-center gap-x-4'>
             <img
                 src={logo}
-                height="40"
-                width="40"
-                className="object-cover rounded-lg group-hover/card:shadow-xl"
+                height="24"
+                width="24"
+                className="object-cover rounded-lg group-hover/card:shadow-xl drama-[#50666a] drama-4"
                 alt="thumbnail"
             />
             <h1 className='hidden text-sm font-semibold sm:block'>nemaas.dev</h1>
           </div>
           <div className='flex items-center p-[5px] border border-[#262626] bg-[#131313] rounded-full gap-x-1 shadow-md drop-shadow-lg'>
-            <HeaderButton active={true}>Works</HeaderButton>
-            <HeaderButton>About</HeaderButton>
+            <HeaderButton active={location.pathname === "/"} route="/">Works</HeaderButton>
+            <HeaderButton active={location.pathname === "/about"} route="/about">About</HeaderButton>
           </div>
           <button className="relative bg-[#1f1f1f] inline-flex items-center max-sm:h-[40px] max-sm:w-[40px] justify-center py-3 mx-0 overflow-hidden text-sm font-semibold text-gray-300 transition-all rounded-full px-4 border-none gap-x-2 group">
             <span className="hidden text-xs sm:block">Resume</span>

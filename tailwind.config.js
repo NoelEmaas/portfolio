@@ -123,6 +123,23 @@ module.exports = {
     require("tailwindcss-animate"), 
     require("twglow"),
     addVariablesForColors,
+    require('tailwind-easing-gradients')({
+      variants: ['responsive'],
+      gradients: {
+        'header': { easing: 'ease-in-out', color: ['#0f0f0f', '#0f0f0f00'] },
+      },
+      alphaDecimals: 5,
+      colorMode: 'lrgb',
+      type: 'linear',
+      easing: 'ease',
+      colorStops: 15,
+      directions: {
+        't': 'to top',
+        'r': 'to right',
+        'b': 'to bottom',
+        'l': 'to left'
+      },
+    }),
     function ({ matchUtilities, theme }) {
       matchUtilities(
         {

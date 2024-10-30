@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 
 interface HeaderButtonProps {
     children: React.ReactNode;
+    route: string;
     active?: boolean;
 }
 
 export default function HeaderButton(props: HeaderButtonProps) {
-    const { children, active = false } = props;
+    const { children, active = false, route } = props;
     const [scrollProgress, setScrollProgress] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
       const handleScroll = () => {
@@ -20,6 +23,10 @@ export default function HeaderButton(props: HeaderButtonProps) {
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const handleNavigate = () => {
+      navigate(route);
+    }
   
     return (
       <Button 
@@ -33,13 +40,14 @@ export default function HeaderButton(props: HeaderButtonProps) {
           }
         `}
         variant="ghost"
+        onClick={handleNavigate}
       >
         {active && (
           <div className="absolute inset-0 z-0 overflow-hidden">
             <div 
               className="absolute bottom-0 left-0 w-full bg-[#50666a]"
               style={{ 
-                height: `${scrollProgress + 2}%`,
+                height: `${scrollProgress + 3}%`,
               }}
             />
             <div 

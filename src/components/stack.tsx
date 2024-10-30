@@ -68,20 +68,20 @@ const SimpleCard = ({title}: {title: string, link: string}) => {
     );
 }
 
-interface StackProps {
+interface StackProps { 
   stackRef: React.RefObject<HTMLDivElement>;
 }
 
 export default function Stack ({stackRef}: StackProps) {
     return (
-        <div ref={stackRef} className='bg-[#0d0d0d] w-full absolute flex items-center top-0 mt-[50vh] h-1/2 border-0 border-b border-t border-[#1f1f1f] z-40'>
-          <div className='w-full relative container lg:px-[10%] sm:px-[5%] px-10 bg-[#0d0d0d] z-0'>
-            <div className='mb-10'>
+        <div ref={stackRef} className='bg-[#0d0d0d] w-full absolute flex items-center top-0 sm:mt-[50vh] mt-[450px] md:h-1/2 md:py-0 py-[10%] border-0 border-b border-t border-[#1f1f1f] z-40'>
+          <div className='w-full relative container lg:px-[calc(12%-2px)] sm:px-[calc(5%-2px)] px-[18px] bg-[#0d0d0d] z-0'>
+            <div className='mb-10 px-[2px]'>
               <h1 className="text-lg bold">Stack</h1>
               <p className='sub-text sub-color'>Tools & frameworks I am proficient with.</p>
             </div>
             <HoverEffect items={tools} />
-            <div className='mt-4 group relative overflow-hidden whitespace-nowrap sm:[mask-image:_linear-gradient(to_right,_transparent_0,_#080808_128px,#080808_calc(100%-128px),_transparent_100%)]'>
+            <div className='mt-4 group relative overflow-hidden whitespace-nowrap [mask-image:_linear-gradient(to_right,_transparent_0,_#080808_128px,#080808_calc(100%-128px),_transparent_100%)]'>
               <div className="inline-block pr-1 animate-slide-left-infinite group-hover:animation-pause w-max">
                 <div className='flex gap-2 pb-4'>
                   <SimpleCard title='Node.js' link='#'/>

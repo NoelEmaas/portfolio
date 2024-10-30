@@ -89,7 +89,7 @@ const otherProjects: OtherProject[] = [
 export default function OtherProjects () {
     return (
       <div className='bg-[#0d0d0d] w-full relative border-0 border-t py-[20px] border-[#1f1f1f] flex items-center'>
-        <div className='w-full py-[5%] px-[10%] container relative'>
+        <div className='w-full py-[5%] lg:px-[12%] sm:px-[5%] px-5 container relative'>
           <div className='mb-10'>
             <h1 className="text-lg bold">Additional Works</h1>
             <p className='sub-text sub-color'>Other projects that are also worth showcasing.</p>
@@ -109,7 +109,7 @@ export default function OtherProjects () {
           >
             <CarouselContent className='pb-4'>
               {otherProjects.map((project, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="sm:basis-1/2 lg:basis-1/3">
                   <OtherProjectCard 
                     key={project.title}
                     title={project.title}
@@ -121,8 +121,8 @@ export default function OtherProjects () {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className='hidden lg:flex'/>
+            <CarouselNext className='hidden lg:flex'/>
           </Carousel>
           
           <div className='flex items-center gap-x-10'>

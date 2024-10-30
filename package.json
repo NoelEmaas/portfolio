@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc -b && vite build",
     "build:prod": "tsc -b && vite build --skip-eslint",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --host"
   },
   "dependencies": {
     "@radix-ui/react-hover-card": "^1.1.2",
@@ -25,7 +25,9 @@
     "qss": "^3.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-photo-view": "^1.2.6",
     "resize-observer-polyfill": "^1.5.1",
+    "tailwind-easing-gradients": "^1.0.2",
     "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7"
   },
@@ -41,6 +43,7 @@
     "eslint-plugin-react-refresh": "^0.4.12",
     "globals": "^15.9.0",
     "postcss": "^8.4.47",
+    "react-router-dom": "^6.27.0",
     "tailwindcss": "^3.4.13",
     "twglow": "^0.0.10",
     "typescript": "^5.5.3",
