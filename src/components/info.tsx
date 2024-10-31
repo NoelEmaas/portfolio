@@ -51,8 +51,7 @@ const rices: RiceImg[] = [
     image: MountainRice
   },
   {
-    image: OldRice,
-    imageFull: OldModernRice
+    image: OldModernRice,
   },
   {
     image: RainyRice
@@ -74,7 +73,7 @@ const experiences: ExperienceProps[] = [
     role: "React Native Developer Intern",
     company: "PrimeAnalytIQ",
     stack: ["React Native", "Firebase", "Typescript", "Jest"],
-    description: "Developed and maintained Android applications for clients using Kotlin and Jetpack Compose."
+    description: "Developed and implemented key frontend features for a mobile application using. Collaborated with the team to create intuitive UI/UX using Figma for multiple mobile app screens, ensuring user-friendly interactions. Debugged and optimized mobile application performance for smoother user experiences."
   },
   {
     startYear: "JUN 2024",
@@ -82,7 +81,7 @@ const experiences: ExperienceProps[] = [
     role: "Lead Programmer (Contract)",
     company: "Ateneo de Naga University",
     stack: ["Laravel", "React", "Typescript", "Tailwind CSS"],
-    description: "Developed and maintained Android applications for clients using Kotlin and Jetpack Compose."
+    description: "Designed and developed an RFID system portal for the university, used by different departments to view the records of individuals (students, employees) that go in and out of the campus."
   },
   {
     startYear: "JUN 2024",
@@ -90,7 +89,7 @@ const experiences: ExperienceProps[] = [
     role: "Full Stack Developer Intern",
     company: "Old.St Labs",
     stack: ["React", "Next.js", "Nest.js", "Typescript", "DynamoDB", "Jest"],
-    description: "Developed and maintained Android applications for clients using Kotlin and Jetpack Compose."
+    description: "Developed web applications for different projects using React, Next.js, and Nest.js. Performed database and system design to implement a scalable architecture for a web application. Developed a backend API service and unit tests for an actual project of the company’s client using  NestJS, DynamoDB and AWS."
   },
   {
     startYear: "JUL 2023",
@@ -98,7 +97,7 @@ const experiences: ExperienceProps[] = [
     role: "Application Developer Intern",
     company: "Ateneo de Naga University",
     stack: ["Laravel", "PHP", "Javascript"],
-    description: "Developed and maintained Android applications for clients using Kotlin and Jetpack Compose."
+    description: "Developed a procurement and asset management system within the university, significantly improving work efficiency of employees by streamlining manual processes."
   },
   {
     startYear: "SEPT 2022",
@@ -106,7 +105,7 @@ const experiences: ExperienceProps[] = [
     role: "Android Developer",
     company: "CodeArmy",
     stack: ["Kotlin", "Jetpack Compose", "Firebase"],
-    description: "Developed and maintained Android applications for clients using Kotlin and Jetpack Compose."
+    description: "Developed and deployed a task management Android application. Integrated Firebase for deployment, implemented Facebook User Authentication, and used Firestore for the database."
   },
 ];
 
@@ -154,17 +153,17 @@ const achievements: AchievementProps[] = [
 export default function Info() {
   return (
     // Move the margin to a wrapper div
-    <div className="mt-40">
-      <div className="flex lg:flex-row flex-col justify-end w-full container lg:px-[10%] sm:px-[5%] px-5 gap-x-28">
+    <div className="mt-56">
+      <div className="flex lg:flex-row flex-col justify-end w-full container lg:px-[12%] sm:px-[5%] px-5 gap-x-24">
         {/* Sticky div now starts behaving correctly */}
-        <div className="bg-transparent lg:sticky top-40 h-fit">
+        <div className="bg-transparent lg:sticky top-56 h-fit">
           <div>
-            <h1 className='mt-2 font-light text-gray-200 md:text-lg text-md'>
+            <h1 className='font-light text-gray-200 md:text-lg text-md'>
               Hi! I am <span className='text-white bold'>Noel Emaas.</span>
             </h1>
           </div>
           <div className='z-40 flex flex-col w-full md:justify-between'>
-            <div className="sm:pt-[4%] pt-[10%] flex flex-col gap-y-1">
+            <div className="sm:pt-[9%] pt-[10%] flex flex-col gap-y-1">
               <h1 className="text-2xl lg:text-4xl md:text-3xl bold title drop-shadow-lg text-glow-white/40">
                 Software developer
               </h1>
@@ -207,11 +206,11 @@ export default function Info() {
                 <AchievementCard {...achievement} />
               ))}
             </div>
-            <div className="flex flex-col gap-y-5 mb-28">
+            <div className="flex flex-col mb-32 gap-y-5">
               <div className="flex flex-col sm:flex-row gap-x-24">
                 <p className="text-sm bold sub-color">∞</p>
                 <div className="flex flex-col max-sm:mt-2">
-                  <p className="text-sm sub-color"><span className="text-white bold">I love linux.</span> It is the OS I use most of the time for development. I also believe that computers should feel like home, especially for programmers who spend most of their lives in front of their machines. That’s why I always configure my OS to feel like home, where it runs, looks, and feels the way I want it to. So here are some of my <a href="https://pesos.github.io/2020/07/14/what-is-ricing.html" className="text-white underline">rice</a> that I want to share.</p>
+                  <p className="text-sm sub-color"><span className="text-white bold">I love linux.</span> It is the OS I use most of the time for development. I also believe that computers should feel like home, especially for programmers who spend most of their time with their machines. That’s why I always configure my OS to feel like home, where it runs, looks, and feels the way I want it to. So here are some of my <a href="https://pesos.github.io/2020/07/14/what-is-ricing.html" className="text-white underline">rice</a> that I want to share.</p>
                   <div className="flex flex-row flex-wrap mt-4 gap-x-2 gap-y-2">
                     <PhotoProvider>
                       {rices.map((rice) => (
