@@ -1,5 +1,3 @@
-import { AtSign, Github, Linkedin } from "lucide-react";
-import { Button } from "./ui/button";
 import 'react-photo-view/dist/react-photo-view.css';
 import ExperienceCard, { ExperienceProps } from "./experience-card";
 import AchievementCard, { AchievementProps } from "./achievement-card";
@@ -18,7 +16,6 @@ import ComfyRice from "@/assets/images/comfy.png";
 import ForestRice from "@/assets/images/forest.png";
 import I3Rice from "@/assets/images/i3.png";
 import MountainRice from "@/assets/images/mountain.png";
-import OldRice from "@/assets/images/old.png";
 import OldModernRice from "@/assets/images/old_modern.png";
 import RainyRice from "@/assets/images/rainy.png";
 import RoninRice from "@/assets/images/ronin.png";
@@ -26,7 +23,9 @@ import RoninFullRice from "@/assets/images/ronin_full.png";
 import WaveRice from "@/assets/images/wave.png";
 import WaveFullRice from "@/assets/images/wave_full.png";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import RiceCard from "./rice-card";
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 interface RiceImg {
   image: string;
@@ -151,66 +150,87 @@ const achievements: AchievementProps[] = [
 
 
 export default function Info() {
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const { ref: aboutInViewRef, inView: isAboutInView } = useInView({
+    threshold: 0.5,
+  });
+
+  const { ref: experienceInViewRef, inView: isExperienceInView } = useInView({
+    threshold: 0.5,
+  });
+
+  const { ref: achievementsInViewRef, inView: isAchievementsInView } = useInView({
+    threshold: 0.5,
+  });
+
+  const { ref: riceInViewRef, inView: isRiceInView } = useInView({
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    if (isAboutInView) setActiveSection('about');
+    else if (isExperienceInView) setActiveSection('experience');
+    else if (isAchievementsInView) setActiveSection('achievements');
+    else if (isRiceInView) setActiveSection('rice');
+  }, [isAboutInView, isExperienceInView, isAchievementsInView, isRiceInView]);
+
   return (
-    // Move the margin to a wrapper div
-    <div className="mt-56">
+    <div className="mt-20 lg:mt-56">
       <div className="flex lg:flex-row flex-col justify-end w-full container lg:px-[12%] sm:px-[5%] px-5 gap-x-24">
-        {/* Sticky div now starts behaving correctly */}
-        <div className="bg-transparent lg:sticky top-56 h-fit">
-          <div>
-            <h1 className='font-light text-gray-200 md:text-lg text-md'>
-              Hi! I am <span className='text-white bold'>Noel Emaas.</span>
-            </h1>
-          </div>
-          <div className='z-40 flex flex-col w-full md:justify-between'>
-            <div className="sm:pt-[9%] pt-[10%] flex flex-col gap-y-1">
-              <h1 className="text-2xl lg:text-4xl md:text-3xl bold title drop-shadow-lg text-glow-white/40">
-                Software developer
+        <div className="bg-transparent lg:sticky top-56 h-fit w-[40%] max-lg:hidden">
+          <div className="flex flex-col gap-y-8">
+            <div>
+              <h1 className={`bold ${activeSection === 'about' ? 'text-white text-3xl' : 'text-[#2f2f2f] text-xl'} transition-all duration-300`}>
+                ABOUT
               </h1>
-              <p className="sub-color sub-text sm:w-full w-[85%]">
-                I design & build web and mobile apps with the latest tech.
-              </p>
             </div>
-            <div className='flex mt-10 sm:flex-row gap-x-2'>
-              <Button className='hover:bg-[#1d1d1d] drop-shadow-lg shadow-lg bg-[#181818] border-0 border-t border-[#3d3d3d] rounded-lg' variant="outline" size="icon">
-                <Linkedin className="w-4 h-4 text-white"/>
-              </Button>
-              <Button className='hover:bg-[#1d1d1d] drop-shadow-lg shadow-lg bg-[#181818] border-0 border-t border-[#3d3d3d] rounded-lg' variant="outline" size="icon">
-                <Github className="w-4 h-4 text-white"/>
-              </Button>
-              <Button 
-                className="shadow-sm group bg-gradient-to-r drop-shadow-lg to-[#2A3F60] border-glow-[#344245] from-[#50666a] border-0 border-none rounded-lg font-semibold hover:text-white text-sm gap-x-2 transition-all duration-300 ease-in-out"
-                variant="outline"
-              >
-                <span className="w-0 overflow-hidden transition-all duration-300 ease-in-out opacity-0 group-hover:w-4 group-hover:opacity-100">
-                  <AtSign className="hidden w-4 h-4 text-white group-hover:block" />
-                </span>
-                <span className="mr-2 transition-all duration-300 ease-in-out group-hover:mr-0 whitespace-nowrap">Get in touch</span>
-              </Button>
+            <div>
+              <h1 className={`bold ${activeSection === 'experience' ? 'text-3xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+                EXPERIENCE
+              </h1>
+            </div>
+            <div>
+              <h1 className={`bold ${activeSection === 'achievements' ? 'text-3xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+                ACHIEVEMENTS
+              </h1>
+            </div>
+            <div>
+              <h1 className={`bold ${activeSection === 'rice' ? 'text-3xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+                SETUP
+              </h1>
             </div>
           </div>
         </div>
         
         <div className="flex-1 max-lg:mt-28">
-            <div className="mb-28 sub-color">
-                <p>
-                  With over <span className="text-white">two and a half years of professional experience</span> crafting web and mobile applications, I've transformed my teenage passion into a thriving career. My journey in programming began at 16 when I chose the programming track in senior high school—a decision that would shape my future path. While I dedicate myself to building elegant digital solutions, I maintain balance through active pursuits like cycling and, more recently, discovering the joy of running. This blend of technical expertise and personal interests fuels my creative approach to software development.</p>
-            </div>
-            <div className="flex flex-col gap-y-10 mb-28">
-              {experiences.map((exp) => (
-                <ExperienceCard {...exp} />
-              ))}
-            </div>
-            <div className="flex flex-col gap-y-10 mb-28">
-              {achievements.map((achievement) => (
-                <AchievementCard {...achievement} />
-              ))}
-            </div>
-            <div className="flex flex-col mb-32 gap-y-5">
-              <div className="flex flex-col sm:flex-row gap-x-24">
+            <motion.div className={`mb-28 sub-color ${activeSection === 'about' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="about" ref={aboutInViewRef}>
+                <h1 className='block text-3xl text-white bold lg:hidden'>ABOUT</h1>
+                <p className='mt-10 lg:mt-0'>
+                  With over <span className="text-white l">two and a half years of professional experience</span> crafting web and mobile applications, I've transformed my teenage passion into a thriving career. My journey in programming began at 16 when I chose the programming track in senior high school—a decision that would shape my future path. While I dedicate myself to building elegant digital solutions, I maintain balance through active pursuits like cycling and, more recently, discovering the joy of running. This blend of technical expertise and personal interests fuels my creative approach to software development.</p>
+            </motion.div>
+            <motion.div className={`mb-28 ${activeSection === 'experience' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="experience" ref={experienceInViewRef}>
+              <h1 className='block text-3xl text-white bold lg:hidden'>EXPERIENCE</h1>
+              <div className='flex flex-col mt-10 gap-y-10'>
+                {experiences.map((exp) => (
+                  <ExperienceCard {...exp} />
+                ))}
+              </div>
+            </motion.div>
+            <motion.div className={`mb-28 ${activeSection === 'achievements' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="achievements" ref={achievementsInViewRef}>
+              <h1 className='block text-3xl text-white bold lg:hidden'>ACHIEVEMENTS</h1>
+              <div className='flex flex-col mt-10 gap-y-10'>
+                {achievements.map((achievement) => (
+                  <AchievementCard {...achievement} />
+                ))}
+              </div>
+            </motion.div>
+            <motion.div className={`flex flex-col mb-32 gap-y-5 ${activeSection === 'rice' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="rice" ref={riceInViewRef}>
+              <h1 className='block text-3xl text-white bold lg:hidden'>SETUP</h1>
+              <div className="flex flex-col mt-6 sm:flex-row gap-x-24">
                 <p className="text-sm bold sub-color">∞</p>
                 <div className="flex flex-col max-sm:mt-2">
-                  <p className="text-sm sub-color"><span className="text-white bold">I love linux.</span> It is the OS I use most of the time for development. I also believe that computers should feel like home, especially for programmers who spend most of their time with their machines. That’s why I always configure my OS to feel like home, where it runs, looks, and feels the way I want it to. So here are some of my <a href="https://pesos.github.io/2020/07/14/what-is-ricing.html" className="text-white underline">rice</a> that I want to share.</p>
+                  <h1 className="bold">Desktop Environment</h1>
+                  <p className="mt-2 text-sm sub-color"><span className="text-white">I love linux.</span> It is the OS I use most of the time for development. I also believe that computers should feel like home, especially for programmers who spend most of their time with their machines. That’s why I always configure my OS to feel like home, where it runs, looks, and feels the way I want it to. So here are some of my <a href="https://pesos.github.io/2020/07/14/what-is-ricing.html" className="text-white underline">rice</a> that I want to share.</p>
                   <div className="flex flex-row flex-wrap mt-4 gap-x-2 gap-y-2">
                     <PhotoProvider>
                       {rices.map((rice) => (
@@ -222,7 +242,7 @@ export default function Info() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
         </div>
       </div>
     </div>

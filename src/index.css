@@ -118,6 +118,14 @@
     animation: animate 4s ease-in-out infinite;
   }
 
+  .header-gradient {
+    background: repeating-linear-gradient(
+      to bottom,
+      #0d0d0d 0%,
+      transparent 100%
+    );
+  }
+
   @keyframes animate {
     0%, 100% {
       clip-path: polygon(
