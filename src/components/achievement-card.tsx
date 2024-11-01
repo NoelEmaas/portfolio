@@ -17,7 +17,7 @@ export default function AchievementCard (props: AchievementProps) {
         </div>
         <div className="flex flex-col w-full grow max-sm:mt-2">
           <h1 className="sub-text">{title}</h1>
-          <p className="mt-2 text-sm border-t border-[#2f2f2f] pt-2 sub-color">{description}</p>
+          <p className="mt-4 text-sm border-t border-[#2f2f2f] pt-4 sub-color">{description}</p>
           <div className="flex flex-row flex-wrap mt-4 gap-x-2 gap-y-2">
             <PhotoProvider>
               {images.map((imageSource) => (

@@ -1,7 +1,7 @@
 import CustomHeader from './components/custom-header';
 import CustomFooter from './components/custom-footer';
 import SmoothScroll from './components/smooth-scroll';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ReactIcon from './assets/images/react_icon.png';
 import LaravelIcon from './assets/images/laravel_icon.png';
 import NextjsIcon from './assets/images/nextjs_icon.png';
@@ -186,6 +186,10 @@ const projects: Project[] = [
 
 export default function IndexPage() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const welcomeRef = useRef<HTMLDivElement>(null);
+  const worksRef = useRef<HTMLDivElement>(null);
+  const otherRef = useRef<HTMLDivElement>(null);
+
   const { ref: welcomeInRef, inView: isWelcomeInView } = useInView({
     threshold: 0.5,
   });
@@ -204,9 +208,13 @@ export default function IndexPage() {
     else if (isOtherInView) setActiveSection('others');
   }, [isWelcomeInView, isWorksInView, isOtherInView]);
 
-  useEffect(() => {
-    console.log(activeSection);
-  }, [activeSection])
+  const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>) => {
+    const OFFSET = 224;
+    const topPosition = sectionRef.current?.getBoundingClientRect().top;
+    const scrollPosition = window.scrollY + (topPosition || 0) - OFFSET;
+    
+    window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+  };
 
   return (
     <SmoothScroll>
@@ -216,24 +224,24 @@ export default function IndexPage() {
               <div className="bg-transparent lg:sticky top-56 h-fit w-[40%] max-lg:hidden">
                 <div className="flex flex-col gap-y-8">
                   <div>
-                    <h1 className={`bold ${activeSection === 'welcome' ? 'text-white text-5xl' : 'text-[#2f2f2f] text-xl'} transition-all duration-300`}>
+                    <h1 onClick={() => scrollToSection(welcomeRef)} className={`bold ${activeSection === 'welcome' ? 'text-white text-5xl' : 'text-[#2f2f2f] text-xl'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}>
                       .welcome
                     </h1>
                   </div>
                   <div>
-                    <h1 className={`bold ${activeSection === 'works' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+                    <h1 onClick={() => scrollToSection(worksRef)} className={`bold ${activeSection === 'works' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}>
                       .projects
                     </h1>
                   </div>
                   <div>
-                    <h1 className={`bold ${activeSection === 'others' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+                    <h1 onClick={() => scrollToSection(otherRef)} className={`bold ${activeSection === 'others' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}>
                       .others
                     </h1>
                   </div>
                 </div>
               </div>
-              <div className="flex-1 w-full max-lg:mt-28">
-                <motion.div className={`mb-28 sub-color ${activeSection === 'welcome' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="about" ref={welcomeInRef}>
+              <div className="z-10 flex-1 w-full max-lg:mt-28">
+                <motion.div className={`mb-28 sub-color ${activeSection === 'welcome' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="about" ref={(node) => { welcomeInRef(node); welcomeRef.current = node; }}>
                   <p className='text-xl text-white sub-text'>Software Developer</p>
                   <p className='mt-2'>I design and developer web and mobile applications with the latest technologies.</p>
                 
@@ -243,7 +251,7 @@ export default function IndexPage() {
                     ))}
                   </div>
                 </motion.div>
-                <motion.div className={`mb-28 sub-color ${activeSection === 'works' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="works" ref={worksInRef}>
+                <motion.div className={`mb-28 sub-color ${activeSection === 'works' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="works" ref={(node) => { worksInRef(node); worksRef.current = node; }}>
                   <p className='text-xl text-white sub-text'>Highlighted Projects</p>
                   <p className='mt-2'>Some projects that I am really proud of.</p>
                 
@@ -253,7 +261,7 @@ export default function IndexPage() {
                     ))}
                   </div>
                 </motion.div>
-                <motion.div className={`lg:mb-60 mb-28 sub-color ${activeSection === 'others' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="others" ref={otherInRef}>
+                <motion.div className={`lg:mb-60 mb-28 sub-color ${activeSection === 'others' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="others" ref={(node) => { otherInRef(node); otherRef.current = node; }}>
                   <p className='text-xl text-white sub-text'>Other Works</p>
                   <p className='mt-2'>Other projects that are also worth showcasing.</p>
                 

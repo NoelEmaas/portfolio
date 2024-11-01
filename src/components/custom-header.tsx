@@ -9,9 +9,9 @@ export default function CustomHeader () {
       <div className='container relative z-50 flex items-center justify-between h-full lg:px-[10%] sm:px-[5%] px-5'>
         <div className="flex items-center">
           <h1 className="text-sm bold">nemaas.</h1>
-          <div className="items-center hidden pl-32 sm:flex gap-x-8">
-            <a href="/" className={`text-sm ${location.pathname === "/" ? 'text-white sub-text' : 'sub-color'}`}>works</a>
-            <a href="/about" className={`text-sm ${location.pathname === "/about" ? 'text-white sub-text' : 'sub-color'}`}>info</a>
+          <div className="items-center hidden pl-40 sm:flex gap-x-8">
+            <a href="/" className={`text-sm ${location.pathname === "/" ? 'text-white sub-text' : 'sub-color'} transition-all duration-300 hover:text-white`}>works</a>
+            <a href="/about" className={`text-sm ${location.pathname === "/about" ? 'text-white sub-text' : 'sub-color'} transition-all duration-300 hover:text-white`}>info</a>
           </div>
         </div>
         <button className="relative bg-[#1f1f1f] inline-flex items-center max-sm:h-[40px] max-sm:w-[40px] justify-center py-2 mx-0 overflow-hidden text-sm font-semibold text-gray-300 transition-all rounded-full px-4 border-none gap-x-2 group">

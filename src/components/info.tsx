@@ -210,7 +210,7 @@ export default function Info() {
             </motion.div>
             <motion.div className={`mb-28 ${activeSection === 'experience' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="experience" ref={experienceInViewRef}>
               <h1 className='block bold italic lg:hidden text-[#1f1f1f]'>EXPERIENCE</h1>
-              <div className='flex flex-col mt-10 gap-y-10'>
+              <div className='flex flex-col mt-10 gap-y-8'>
                 {experiences.map((exp) => (
                   <ExperienceCard {...exp} />
                 ))}
@@ -218,7 +218,7 @@ export default function Info() {
             </motion.div>
             <motion.div className={`mb-28 ${activeSection === 'achievements' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="achievements" ref={achievementsInViewRef}>
               <h1 className='block bold italic lg:hidden text-[#1f1f1f]'>TRIUMPHS</h1>
-              <div className='flex flex-col mt-10 gap-y-10'>
+              <div className='flex flex-col mt-10 gap-y-8'>
                 {achievements.map((achievement) => (
                   <AchievementCard {...achievement} />
                 ))}
