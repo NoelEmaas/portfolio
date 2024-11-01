@@ -41,7 +41,7 @@ export default function ExperienceCard (props: ExperienceProps) {
         <div className="flex flex-col w-full grow max-sm:mt-2">
           <h1 className="sub-text">{role}</h1>
           <h1 className="">{company}</h1>
-          <p className="mt-2 text-sm sub-color">{description}</p>
+          <p className="mt-2 text-sm sub-color border-t border-[#2f2f2f] pt-2">{description}</p>
           <div className="flex flex-row flex-wrap mt-4 gap-x-2 gap-y-2">
             {stack.map((tool) => (
               <SimpleCard title={tool} link="#" />

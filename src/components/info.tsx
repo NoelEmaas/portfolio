@@ -69,7 +69,7 @@ const experiences: ExperienceProps[] = [
   {
     startYear: "AUG 2024",
     endYear: "NOW",
-    role: "React Native Developer Intern",
+    role: "React Native / Firebase Developer Intern",
     company: "PrimeAnalytIQ",
     stack: ["React Native", "Firebase", "Typescript", "Jest"],
     description: "Developed and implemented key frontend features for a mobile application using. Collaborated with the team to create intuitive UI/UX using Figma for multiple mobile app screens, ensuring user-friendly interactions. Debugged and optimized mobile application performance for smoother user experiences."
@@ -176,26 +176,26 @@ export default function Info() {
 
   return (
     <div className="mt-20 lg:mt-56">
-      <div className="flex lg:flex-row flex-col justify-end w-full container lg:px-[12%] sm:px-[5%] px-5 gap-x-24">
+      <div className="flex lg:flex-row flex-col justify-end w-full container lg:px-[10%] sm:px-[5%] px-5 gap-x-24">
         <div className="bg-transparent lg:sticky top-56 h-fit w-[40%] max-lg:hidden">
           <div className="flex flex-col gap-y-8">
             <div>
-              <h1 className={`bold ${activeSection === 'about' ? 'text-white text-4xl' : 'text-[#2f2f2f] text-xl'} transition-all duration-300`}>
+              <h1 className={`bold ${activeSection === 'about' ? 'text-white text-5xl' : 'text-[#2f2f2f] text-xl'} transition-all duration-300`}>
                 .about
               </h1>
             </div>
             <div>
-              <h1 className={`bold ${activeSection === 'experience' ? 'text-4xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
-                .experience
+              <h1 className={`bold ${activeSection === 'experience' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+                .experiences
               </h1>
             </div>
             <div>
-              <h1 className={`bold ${activeSection === 'achievements' ? 'text-4xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
-                .achievements
+              <h1 className={`bold ${activeSection === 'achievements' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+                .triumphs
               </h1>
             </div>
             <div>
-              <h1 className={`bold ${activeSection === 'rice' ? 'text-4xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+              <h1 className={`bold ${activeSection === 'rice' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
                 .setup
               </h1>
             </div>
@@ -217,7 +217,7 @@ export default function Info() {
               </div>
             </motion.div>
             <motion.div className={`mb-28 ${activeSection === 'achievements' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="achievements" ref={achievementsInViewRef}>
-              <h1 className='block bold italic lg:hidden text-[#1f1f1f]'>ACHIEVEMENTS</h1>
+              <h1 className='block bold italic lg:hidden text-[#1f1f1f]'>TRIUMPHS</h1>
               <div className='flex flex-col mt-10 gap-y-10'>
                 {achievements.map((achievement) => (
                   <AchievementCard {...achievement} />

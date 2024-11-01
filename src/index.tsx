@@ -147,10 +147,9 @@ const projects: Project[] = [
   {
       title: 'Anzen',
       year: '2024',
-      imagePadding: 'md:p-[40px]',
       imageStyle: 'border border-[#2f2f2f] rounded-lg shadow-lg drop-shadow-lg',
       hoverGradient: 'to-blue-800 from-indigo-950',
-      description: 'University RFID system',
+      description: 'University RFID system displaying real-time time-in/out logs for departments, with user info visible at every gates.',
       image: AnzenMock,
       stack: ["React", "Laravel", "Intertia", "PL/SQL", "Typescript", "Tailwind CSS"],
       link: '#'
@@ -158,10 +157,9 @@ const projects: Project[] = [
   {
       title: 'Stubu.AI',
       year: '2024',
-      imagePadding: 'md:p-[40px]',
       imageStyle: 'border border-[#2f2f2f] rounded-lg shadow-lg drop-shadow-lg',
       hoverGradient: 'to-cyan-800 from-[#0e1f47]',
-      description: 'AI powered learning platform',
+      description: 'AI-driven app generating personalized lessons, quizzes, and modules tailored to users\' chosen topics.',
       image: StubuMock,
       stack: ["React", "Intertia", "Typescript", "Tailwind CSS"],
       link: '#'
@@ -169,9 +167,8 @@ const projects: Project[] = [
   {
       title: 'AgriCon',
       year: '2023',
-      imagePadding: 'md:p-[20px]',
       hoverGradient: 'to-[#0e6e2f] from-[#18453a]',
-      description: 'Agricultural consultancy platform',
+      description: 'Mobile-first web app that helps farmers to sell products online directly to consumers without a middlemen.',
       image: AgriconMock,
       stack: ["Laravel", "TailwindCSS", "Javascript", "PHP"],
       link: '#'
@@ -179,9 +176,8 @@ const projects: Project[] = [
   {
       title: 'To Do It',
       year: '2022',
-      imagePadding: 'md:p-[40px]',
       hoverGradient: 'to-sky-800 from-sky-950',
-      description: 'Task managemment android app',
+      description: 'Task and notes app with markdown, date assignments, and live weather for organized, context-rich planning',
       image: TodoMock,
       stack: ["Kotlin", "Jetpack Compose", "Firebase"],
       link: '#'
@@ -195,7 +191,7 @@ export default function IndexPage() {
   });
 
   const { ref: worksInRef, inView: isWorksInView } = useInView({
-    threshold: 0.5,
+    threshold: 0.25,
   });
 
   const { ref: otherInRef, inView: isOtherInView } = useInView({
@@ -208,25 +204,29 @@ export default function IndexPage() {
     else if (isOtherInView) setActiveSection('others');
   }, [isWelcomeInView, isWorksInView, isOtherInView]);
 
+  useEffect(() => {
+    console.log(activeSection);
+  }, [activeSection])
+
   return (
     <SmoothScroll>
         <CustomHeader />
           <div className="mt-20 lg:mt-56">
-            <div className="flex lg:flex-row flex-col justify-end w-full container lg:px-[12%] sm:px-[5%] px-5 gap-x-24">
+            <div className="flex lg:flex-row flex-col justify-end w-full container lg:px-[10%] sm:px-[5%] px-5 gap-x-24">
               <div className="bg-transparent lg:sticky top-56 h-fit w-[40%] max-lg:hidden">
                 <div className="flex flex-col gap-y-8">
                   <div>
-                    <h1 className={`bold ${activeSection === 'welcome' ? 'text-white text-4xl' : 'text-[#2f2f2f] text-xl'} transition-all duration-300`}>
+                    <h1 className={`bold ${activeSection === 'welcome' ? 'text-white text-5xl' : 'text-[#2f2f2f] text-xl'} transition-all duration-300`}>
                       .welcome
                     </h1>
                   </div>
                   <div>
-                    <h1 className={`bold ${activeSection === 'works' ? 'text-4xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+                    <h1 className={`bold ${activeSection === 'works' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
                       .projects
                     </h1>
                   </div>
                   <div>
-                    <h1 className={`bold ${activeSection === 'others' ? 'text-4xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+                    <h1 className={`bold ${activeSection === 'others' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
                       .others
                     </h1>
                   </div>
@@ -237,7 +237,7 @@ export default function IndexPage() {
                   <p className='text-xl text-white sub-text'>Software Developer</p>
                   <p className='mt-2'>I design and developer web and mobile applications with the latest technologies.</p>
                 
-                  <div className='grid grid-cols-2 gap-8 mt-8'>
+                  <div className='grid grid-cols-2 gap-6 mt-8 sm:grid-cols-3'>
                     {tools.map((tool, index) => (
                       <ToolCard key={index} {...tool} />
                     ))}
@@ -247,7 +247,7 @@ export default function IndexPage() {
                   <p className='text-xl text-white sub-text'>Highlighted Projects</p>
                   <p className='mt-2'>Some projects that I am really proud of.</p>
                 
-                  <div className='flex flex-col gap-y-8 border-t mt-6 border-[#2f2f2f] pt-6'>
+                  <div className='flex flex-col gap-y-8 mt-8 border-[#2f2f2f]'>
                     {projects.map((tool, index) => (
                       <ProjectCard key={index} {...tool} />
                     ))}
@@ -257,7 +257,7 @@ export default function IndexPage() {
                   <p className='text-xl text-white sub-text'>Other Works</p>
                   <p className='mt-2'>Other projects that are also worth showcasing.</p>
                 
-                  <div className='grid grid-cols-2 gap-8 border-t mt-6 border-[#2f2f2f] pt-6'>
+                  <div className='flex flex-col gap-y-8 mt-8 border-[#2f2f2f]'>
                     {otherProjects.map((project, index) => (
                       <OtherProjectCard key={index} {...project} />
                     ))}
