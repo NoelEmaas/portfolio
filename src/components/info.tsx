@@ -180,23 +180,23 @@ export default function Info() {
         <div className="bg-transparent lg:sticky top-56 h-fit w-[40%] max-lg:hidden">
           <div className="flex flex-col gap-y-8">
             <div>
-              <h1 className={`bold ${activeSection === 'about' ? 'text-white text-3xl' : 'text-[#2f2f2f] text-xl'} transition-all duration-300`}>
-                ABOUT
+              <h1 className={`bold ${activeSection === 'about' ? 'text-white text-4xl' : 'text-[#2f2f2f] text-xl'} transition-all duration-300`}>
+                .about
               </h1>
             </div>
             <div>
-              <h1 className={`bold ${activeSection === 'experience' ? 'text-3xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
-                EXPERIENCE
+              <h1 className={`bold ${activeSection === 'experience' ? 'text-4xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+                .experience
               </h1>
             </div>
             <div>
-              <h1 className={`bold ${activeSection === 'achievements' ? 'text-3xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
-                ACHIEVEMENTS
+              <h1 className={`bold ${activeSection === 'achievements' ? 'text-4xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+                .achievements
               </h1>
             </div>
             <div>
-              <h1 className={`bold ${activeSection === 'rice' ? 'text-3xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
-                SETUP
+              <h1 className={`bold ${activeSection === 'rice' ? 'text-4xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+                .setup
               </h1>
             </div>
           </div>
@@ -204,12 +204,12 @@ export default function Info() {
         
         <div className="flex-1 max-lg:mt-28">
             <motion.div className={`mb-28 sub-color ${activeSection === 'about' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="about" ref={aboutInViewRef}>
-                <h1 className='block text-3xl text-white bold lg:hidden'>ABOUT</h1>
+                <h1 className='block bold italic lg:hidden text-[#1f1f1f]'>ABOUT</h1>
                 <p className='mt-10 lg:mt-0'>
                   With over <span className="text-white l">two and a half years of professional experience</span> crafting web and mobile applications, I've transformed my teenage passion into a thriving career. My journey in programming began at 16 when I chose the programming track in senior high school—a decision that would shape my future path. While I dedicate myself to building elegant digital solutions, I maintain balance through active pursuits like cycling and, more recently, discovering the joy of running. This blend of technical expertise and personal interests fuels my creative approach to software development.</p>
             </motion.div>
             <motion.div className={`mb-28 ${activeSection === 'experience' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="experience" ref={experienceInViewRef}>
-              <h1 className='block text-3xl text-white bold lg:hidden'>EXPERIENCE</h1>
+              <h1 className='block bold italic lg:hidden text-[#1f1f1f]'>EXPERIENCE</h1>
               <div className='flex flex-col mt-10 gap-y-10'>
                 {experiences.map((exp) => (
                   <ExperienceCard {...exp} />
@@ -217,19 +217,19 @@ export default function Info() {
               </div>
             </motion.div>
             <motion.div className={`mb-28 ${activeSection === 'achievements' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="achievements" ref={achievementsInViewRef}>
-              <h1 className='block text-3xl text-white bold lg:hidden'>ACHIEVEMENTS</h1>
+              <h1 className='block bold italic lg:hidden text-[#1f1f1f]'>ACHIEVEMENTS</h1>
               <div className='flex flex-col mt-10 gap-y-10'>
                 {achievements.map((achievement) => (
                   <AchievementCard {...achievement} />
                 ))}
               </div>
             </motion.div>
-            <motion.div className={`flex flex-col mb-32 gap-y-5 ${activeSection === 'rice' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="rice" ref={riceInViewRef}>
-              <h1 className='block text-3xl text-white bold lg:hidden'>SETUP</h1>
+            <motion.div className={`flex flex-col lg:mb-60 mb-28 gap-y-5 ${activeSection === 'rice' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="rice" ref={riceInViewRef}>
+              <h1 className='block bold italic lg:hidden text-[#1f1f1f]'>SETUP</h1>
               <div className="flex flex-col mt-6 sm:flex-row gap-x-24">
                 <p className="text-sm bold sub-color">∞</p>
                 <div className="flex flex-col max-sm:mt-2">
-                  <h1 className="bold">Desktop Environment</h1>
+                  <h1 className="sub-text">Desktop Environment</h1>
                   <p className="mt-2 text-sm sub-color"><span className="text-white">I love linux.</span> It is the OS I use most of the time for development. I also believe that computers should feel like home, especially for programmers who spend most of their time with their machines. That’s why I always configure my OS to feel like home, where it runs, looks, and feels the way I want it to. So here are some of my <a href="https://pesos.github.io/2020/07/14/what-is-ricing.html" className="text-white underline">rice</a> that I want to share.</p>
                   <div className="flex flex-row flex-wrap mt-4 gap-x-2 gap-y-2">
                     <PhotoProvider>

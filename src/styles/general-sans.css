@@ -148,6 +148,48 @@
   font-display: swap;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'PPneuMontreal-Thin';
+  src: url('../assets/fonts/ppneuemontreal-thin.otf') format('opentype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPneuMontreal-Book';
+  src: url('../assets/fonts/ppneuemontreal-book.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPneuMontreal-Medium';
+  src: url('../assets/fonts/ppneuemontreal-medium.otf') format('opentype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPneuMontreal-Semibold';
+  src: url('../assets/fonts/ppneuemontreal-semibolditalic.otf') format('opentype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPneuMontreal-Bold';
+  src: url('../assets/fonts/ppneuemontreal-bold.otf') format('opentype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+
 /**
 * This is a variable font
 * You can control variable axes as shown below:

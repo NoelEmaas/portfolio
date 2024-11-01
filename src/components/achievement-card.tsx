@@ -12,11 +12,11 @@ export default function AchievementCard (props: AchievementProps) {
 
   return (
     <div className="flex flex-col sm:flex-row gap-x-16">
-        <div className="flex-none text-xs bold sub-color sm:mt-1">
+        <div className="flex-none text-xs sub-text sub-color sm:mt-1">
           <p>{date}</p>
         </div>
         <div className="flex flex-col w-full grow max-sm:mt-2">
-          <h1 className="bold">{title}</h1>
+          <h1 className="sub-text">{title}</h1>
           <p className="mt-2 text-sm sub-color">{description}</p>
           <div className="flex flex-row flex-wrap mt-4 gap-x-2 gap-y-2">
             <PhotoProvider>

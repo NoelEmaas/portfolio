@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 export default function CustomHeader () {
   const location = useLocation();
   return (
-    <div className={`w-full top-0 left-0 right-0 sm:h-[85px] h-[65px] fixed z-50 header-gradient`}>
+    <div className={`w-full top-0 left-0 right-0 sm:h-[85px] h-[65px] max-lg:bg-[#0d0d0d] fixed z-50 header-gradient`}>
       <div className='container relative z-50 flex items-center justify-between h-full lg:px-[12%] sm:px-[5%] px-5'>
         <div className="flex items-center">
           <h1 className="text-sm bold">NOEL EMAAS</h1>

@@ -8,10 +8,10 @@ export interface ExperienceProps {
   description: string;
 }
 
-const SimpleCard = ({title}: {title: string, link: string}) => {
+export const SimpleCard = ({title}: {title: string, link?: string}) => {
   return (
       <div 
-        className='flex items-center justify-center bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] drop-shadow-sm border-0 border-t border-[#212121] shadow-sm transition-all duration-300 cursor-pointer hover:border-[#1f1f1f] rounded-full px-4 py-[4px] text-xs sub-color hover:text-white'>
+        className='flex items-center justify-center sub-text bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] drop-shadow-sm border-0 border-t border-[#212121] shadow-sm transition-all duration-300 cursor-pointer hover:border-[#1f1f1f] rounded-full px-4 py-[4px] text-xs sub-color hover:text-white'>
         {title}
       </div>
   );
@@ -22,7 +22,7 @@ export default function ExperienceCard (props: ExperienceProps) {
 
   return (
     <div className="flex flex-col sm:flex-row gap-x-10">
-        <div className="flex-none text-xs bold sub-color sm:mt-1">
+        <div className="flex-none text-xs sub-text sub-color sm:mt-1">
           <div className="flex gap-x-2">
             <div>
               <p className="block sm:hidden">{startYear}</p>
@@ -39,8 +39,8 @@ export default function ExperienceCard (props: ExperienceProps) {
           {/* <p>{startYear.spl} — {endYear}</p> */}
         </div>
         <div className="flex flex-col w-full grow max-sm:mt-2">
-          <h1 className="bold">{role}</h1>
-          <h1 className="italic font-semibold">{company}</h1>
+          <h1 className="sub-text">{role}</h1>
+          <h1 className="">{company}</h1>
           <p className="mt-2 text-sm sub-color">{description}</p>
           <div className="flex flex-row flex-wrap mt-4 gap-x-2 gap-y-2">
             {stack.map((tool) => (
