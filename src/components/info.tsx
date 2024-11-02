@@ -24,7 +24,7 @@ import WaveRice from "@/assets/images/wave.png";
 import WaveFullRice from "@/assets/images/wave_full.png";
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 interface RiceImg {
@@ -151,12 +151,17 @@ const achievements: AchievementProps[] = [
 
 export default function Info() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
+  const achievmentsRef = useRef<HTMLDivElement>(null);
+  const riceRef = useRef<HTMLDivElement>(null);
+  
   const { ref: aboutInViewRef, inView: isAboutInView } = useInView({
-    threshold: 0.5,
+    threshold: 0.8,
   });
 
   const { ref: experienceInViewRef, inView: isExperienceInView } = useInView({
-    threshold: 0.5,
+    threshold: 0.25,
   });
 
   const { ref: achievementsInViewRef, inView: isAchievementsInView } = useInView({
@@ -174,58 +179,66 @@ export default function Info() {
     else if (isRiceInView) setActiveSection('rice');
   }, [isAboutInView, isExperienceInView, isAchievementsInView, isRiceInView]);
 
+  const scrollToSection = (sectionRef: React.RefObject<HTMLDivElement>) => {
+    const OFFSET = 224;
+    const topPosition = sectionRef.current?.getBoundingClientRect().top;
+    const scrollPosition = window.scrollY + (topPosition || 0) - OFFSET;
+    
+    window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+  };
+
   return (
-    <div className="mt-20 lg:mt-56">
+    <div className="mt-0 sm:mt-20 lg:mt-56">
       <div className="flex lg:flex-row flex-col justify-end w-full container lg:px-[10%] sm:px-[5%] px-5 gap-x-24">
         <div className="bg-transparent lg:sticky top-56 h-fit w-[40%] max-lg:hidden">
           <div className="flex flex-col gap-y-8">
             <div>
-              <h1 className={`bold ${activeSection === 'about' ? 'text-white text-5xl' : 'text-[#2f2f2f] text-xl'} transition-all duration-300`}>
+              <h1 onClick={() => scrollToSection(aboutRef)} className={`bold ${activeSection === 'about' ? 'text-white text-5xl' : 'text-[#2f2f2f] text-xl'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}>
                 .about
               </h1>
             </div>
             <div>
-              <h1 className={`bold ${activeSection === 'experience' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+              <h1 onClick={() => scrollToSection(experienceRef)} className={`bold ${activeSection === 'experience' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}>
                 .experiences
               </h1>
             </div>
             <div>
-              <h1 className={`bold ${activeSection === 'achievements' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+              <h1 onClick={() => scrollToSection(achievmentsRef)} className={`bold ${activeSection === 'achievements' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}>
                 .triumphs
               </h1>
             </div>
             <div>
-              <h1 className={`bold ${activeSection === 'rice' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300`}>
+              <h1 onClick={() => scrollToSection(riceRef)} className={`bold ${activeSection === 'rice' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}>
                 .setup
               </h1>
             </div>
           </div>
         </div>
         
-        <div className="flex-1 max-lg:mt-28">
-            <motion.div className={`mb-28 sub-color ${activeSection === 'about' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="about" ref={aboutInViewRef}>
-                <h1 className='block bold italic lg:hidden text-[#1f1f1f]'>ABOUT</h1>
-                <p className='mt-10 lg:mt-0'>
+        <div className="flex-1 max-sm:mt-0 max-lg:mt-28">
+            <motion.div className={`sm:min-h-fit min-h-screen mb-28 max-sm:mb-0 max-sm:pb-28 flex flex-col justify-end sub-color ${activeSection === 'about' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="about" ref={(node) => { aboutInViewRef(node); aboutRef.current = node; }}>
+                <p className='block text-xl text-white sub-text lg:hidden'>About</p>
+                <p className='mt-8 lg:mt-0'>
                   With over <span className="text-white l">two and a half years of professional experience</span> crafting web and mobile applications, I've transformed my teenage passion into a thriving career. My journey in programming began at 16 when I chose the programming track in senior high school—a decision that would shape my future path. While I dedicate myself to building elegant digital solutions, I maintain balance through active pursuits like cycling and, more recently, discovering the joy of running. This blend of technical expertise and personal interests fuels my creative approach to software development.</p>
             </motion.div>
-            <motion.div className={`mb-28 ${activeSection === 'experience' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="experience" ref={experienceInViewRef}>
-              <h1 className='block bold italic lg:hidden text-[#1f1f1f]'>EXPERIENCE</h1>
-              <div className='flex flex-col mt-10 gap-y-8'>
+            <motion.div className={`mb-28 ${activeSection === 'experience' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="experience" ref={(node) => { experienceInViewRef(node); experienceRef.current = node; }}>
+              <p className='block text-xl text-white sub-text lg:hidden'>Experience</p>
+              <div className='flex flex-col mt-8 gap-y-8'>
                 {experiences.map((exp) => (
                   <ExperienceCard {...exp} />
                 ))}
               </div>
             </motion.div>
-            <motion.div className={`mb-28 ${activeSection === 'achievements' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="achievements" ref={achievementsInViewRef}>
-              <h1 className='block bold italic lg:hidden text-[#1f1f1f]'>TRIUMPHS</h1>
-              <div className='flex flex-col mt-10 gap-y-8'>
+            <motion.div className={`mb-28 ${activeSection === 'achievements' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="achievements" ref={(node) => { achievementsInViewRef(node); achievmentsRef.current = node; }}>
+              <p className='block text-xl text-white sub-text lg:hidden'>Triumphs</p>
+              <div className='flex flex-col mt-8 gap-y-8'>
                 {achievements.map((achievement) => (
                   <AchievementCard {...achievement} />
                 ))}
               </div>
             </motion.div>
-            <motion.div className={`flex flex-col lg:mb-60 mb-28 gap-y-5 ${activeSection === 'rice' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="rice" ref={riceInViewRef}>
-              <h1 className='block bold italic lg:hidden text-[#1f1f1f]'>SETUP</h1>
+            <motion.div className={`flex flex-col lg:mb-60 mb-28 gap-y-5 ${activeSection === 'rice' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} ref={(node) => { riceInViewRef(node); riceRef.current = node; }}>
+              <p className='block text-xl text-white sub-text lg:hidden'>Setup</p>
               <div className="flex flex-col mt-6 sm:flex-row gap-x-24">
                 <p className="text-sm bold sub-color">∞</p>
                 <div className="flex flex-col max-sm:mt-2">

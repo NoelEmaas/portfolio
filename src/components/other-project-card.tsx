@@ -30,7 +30,7 @@ export default function OtherProjectCard (props: OtherProjectCardProps) {
                     </div>
                 </div>
             </div>
-            <div className="border-[#1f1f1f] bg-[#0a0a0a] border rounded-lg">
+            <div className="border-[#1f1f1f] bg-[#0a0a0a] border rounded-md">
                 <img
                     src={image}
                     className="object-cover w-full transition-all duration-300 ease-out mix-blend-plus-lighter h-fit brightness-75 group-hover:brightness-100"

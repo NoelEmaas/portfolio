@@ -219,7 +219,7 @@ export default function IndexPage() {
   return (
     <SmoothScroll>
         <CustomHeader />
-          <div className="mt-20 lg:mt-56">
+          <div className="mt-0 sm:mt-20 lg:mt-56">
             <div className="flex lg:flex-row flex-col justify-end w-full container lg:px-[10%] sm:px-[5%] px-5 gap-x-24">
               <div className="bg-transparent lg:sticky top-56 h-fit w-[40%] max-lg:hidden">
                 <div className="flex flex-col gap-y-8">
@@ -240,8 +240,8 @@ export default function IndexPage() {
                   </div>
                 </div>
               </div>
-              <div className="z-10 flex-1 w-full max-lg:mt-28">
-                <motion.div className={`mb-28 sub-color ${activeSection === 'welcome' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="about" ref={(node) => { welcomeInRef(node); welcomeRef.current = node; }}>
+              <div className="z-10 flex-1 w-full max-sm:mt-0 max-lg:mt-28">
+                <motion.div className={`sm:min-h-fit flex flex-col justify-end min-h-screen mb-28 max-sm:mb-0 sub-color max-sm:pb-28 ${activeSection === 'welcome' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="about" ref={(node) => { welcomeInRef(node); welcomeRef.current = node; }}>
                   <p className='text-xl text-white sub-text'>Software Developer</p>
                   <p className='mt-2'>I design and developer web and mobile applications with the latest technologies.</p>
                 
