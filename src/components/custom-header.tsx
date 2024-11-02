@@ -33,21 +33,21 @@ const Menu = ({ isCollapsed, location }: { isCollapsed: boolean, location: strin
           <a
             onClick={() => {}}
             href="/"
-            className={`bold ${location === '/' ? 'text-white text-6xl' : 'text-[#2f2f2f] text-5xl'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}
+            className={`sub-text ${location === '/' ? 'text-white text-6xl' : 'text-[#2f2f2f] text-5xl'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}
           >
-            .works
+            ✦ WORKS
           </a>
           <a
             onClick={() => {}}
             href="/about"
-            className={`bold ${location === '/about' ? 'text-white text-6xl' : 'text-[#2f2f2f] text-5xl'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}
+            className={`sub-text ${location === '/about' ? 'text-white text-6xl' : 'text-[#2f2f2f] text-5xl'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}
           >
-            .info
+            ✦ INFO
           </a>
         </div>
         <div className="border-t border-[#2f2f2f] pt-8">
           <div className="flex items-center justify-between ">
-            <p className="text-sm text-white bold">resume.</p>
+            <p className="text-sm text-white bold">RESUME</p>
             <div className="flex items-center pl-[85px] text-sm gap-x-6 w-fit sub-color">
                 <ArrowRight className="w-6 h-6 text-white"/>
             </div>
@@ -55,11 +55,11 @@ const Menu = ({ isCollapsed, location }: { isCollapsed: boolean, location: strin
         </div>
         <div className="border-t border-[#2f2f2f] pt-8">
           <div className="flex items-center justify-between ">
-            <p className="text-sm text-white bold">contacts.</p>
+            <p className="text-sm text-white bold">CONTACTS</p>
             <div className="flex items-center pl-[85px] text-sm gap-x-6 w-fit sub-color">
-                <a className="transition-all duration-300 cursor-pointer hover:text-white">email</a>
-                <a className="transition-all duration-300 cursor-pointer hover:text-white">linkedin</a>
-                <a className="transition-all duration-300 cursor-pointer hover:text-white">github</a>
+                <a className="transition-all duration-300 cursor-pointer hover:text-white">.EMAIL</a>
+                <a className="transition-all duration-300 cursor-pointer hover:text-white">.LINKEDIN</a>
+                <a className="transition-all duration-300 cursor-pointer hover:text-white">.GITHUB</a>
             </div>
           </div>
         </div>
@@ -81,17 +81,17 @@ export default function CustomHeader () {
     <>
       <Menu isCollapsed={isCollapsed} location={location.pathname}/>
       <div className={`w-full top-0 left-0 right-0 sm:h-[85px] h-[60px] max-lg:bg-[#0d0d0d] header-gradient fixed z-50`}>
-        <div className='container relative z-50 flex items-center justify-between h-full lg:px-[10%] sm:px-[5%] px-5'>
+        <div className='relative z-50 flex items-center justify-between h-full sm:px-[5%] px-5 mx-0'>
           <div className="flex items-center">
-            <h1 className="text-sm bold">nemaas.</h1>
+            <h1 className="text-xs bold">NEMAAS</h1>
             <div className="items-center hidden pl-40 sm:flex gap-x-8">
-              <a href="/" className={`text-sm ${location.pathname === "/" ? 'text-white sub-text' : 'sub-color'} transition-all duration-300 hover:text-white`}>works</a>
-              <a href="/about" className={`text-sm ${location.pathname === "/about" ? 'text-white sub-text' : 'sub-color'} transition-all duration-300 hover:text-white`}>info</a>
+              <a href="/" className={`text-xs ${location.pathname === "/" ? 'text-white sub-text' : 'sub-color'} transition-all duration-300 hover:text-white`}>.WORKS</a>
+              <a href="/about" className={`text-xs ${location.pathname === "/about" ? 'text-white sub-text' : 'sub-color'} transition-all duration-300 hover:text-white`}>.INFO</a>
             </div>
           </div>
           <HamburgerIcon onClick={handleCollapsible}/>
           <button className="relative bg-[#1f1f1f] sm:inline-flex hidden  items-center max-sm:h-[40px] max-sm:w-[40px] justify-center py-2 mx-0 overflow-hidden text-sm font-semibold text-gray-300 transition-all rounded-full px-4 border-none gap-x-2 group">
-            <span className="hidden text-xs sm:block">resume</span>
+            <span className="hidden text-xs sm:block">RESUME</span>
             <div className="relative w-[12px] h-[12px]">
               <FileText className="absolute z-10 w-full h-full text-gray-300 transition-all duration-300 ease-in-out opacity-100 group-hover:opacity-0 group-hover:translate-y-full group-hover:z-0"/>
               <Download className="absolute z-0 w-full h-full text-gray-300 transition-all duration-300 ease-in-out -translate-y-full opacity-0 group-hover:opacity-100 group-hover:translate-y-0 group-hover:z-10"/>

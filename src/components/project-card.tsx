@@ -21,11 +21,11 @@ export default function ProjectCard (props: ProjectCardProps) {
             <div className="absolute top-0 left-0 right-0 h-[0.8px] bg-gradient-to-r from-[#0f0f0f] via-[#8f8f8f] to-[#0f0f0f]" />
             <div className="relative h-full rounded-md group-hover:border-[#1d1d1d] overflow-hidden">
               <div className="absolute inset-0 transition-opacity duration-500 ease-in-out bg-[#181818] group-hover:opacity-0" />
-              <div className={`absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 bg-gradient-to-br ${hoverGradient} group-hover:opacity-100`}/>
-              <div className={`relative h-full p-10 flex flex-col items-center justify-center ${imagePadding}`}>
+              <div className={`absolute inset-0 transition-opacity duration-500 ease-in-out opacity-100 bg-gradient-to-br ${hoverGradient} group-hover:opacity-100`}/>
+              <div className={`relative h-full flex flex-col items-center justify-center ${imagePadding}`}>
                 <img
                   src={image}
-                  className={`object-cover lg:h-fit md: w-full duration-300 ease-out rounded-md mt-0 brightness-75 group-hover:brightness-100 ${imageStyle}`}
+                  className={`object-cover lg:h-fit md: w-full duration-300 ease-out rounded-md mt-0 brightness-75 group-hover:brightness-90 ${imageStyle} scale-100 group-hover:scale-105`}
                   alt="thumbnail"
                 />
               </div>

@@ -13,7 +13,7 @@ import ToolCard from './components/tool-card';
 import ProjectCard from './components/project-card';
 import TodoMock from './assets/images/todo_mock.png';
 import AgriconMock from './assets/images/agricon_mock_tmp.png';
-import StubuMock from './assets/images/stubu_mock_tmp.png';
+import StubuMock from './assets/images/stubu_mock_final.png';
 import AnzenMock from './assets/images/anzen_mock.png';
 import TyperistMock from './assets/images/typerist_mock.png';
 import PokedexMock from './assets/images/pokedex_mock.png';
@@ -147,8 +147,9 @@ const projects: Project[] = [
   {
       title: 'Anzen',
       year: '2024',
-      imageStyle: 'border border-[#2f2f2f] rounded-lg shadow-lg drop-shadow-lg',
-      hoverGradient: 'to-blue-800 from-indigo-950',
+      imagePadding: 'p-5',
+      imageStyle: 'rounded-lg',
+      hoverGradient: 'bg-[#8FACE3]',
       description: 'University RFID system displaying real-time time-in/out logs for departments, with user info visible at every gates.',
       image: AnzenMock,
       stack: ["React", "Laravel", "Intertia", "PL/SQL", "Typescript", "Tailwind CSS"],
@@ -157,8 +158,8 @@ const projects: Project[] = [
   {
       title: 'Stubu.AI',
       year: '2024',
-      imageStyle: 'border border-[#2f2f2f] rounded-lg shadow-lg drop-shadow-lg',
-      hoverGradient: 'to-cyan-800 from-[#0e1f47]',
+      imageStyle: 'rounded-lg shadow-lg drop-shadow-lg',
+      hoverGradient: 'to-[#888CBA] from-[#888CBA]',
       description: 'AI-driven app generating personalized lessons, quizzes, and modules tailored to users\' chosen topics.',
       image: StubuMock,
       stack: ["React", "Intertia", "Typescript", "Tailwind CSS"],
@@ -195,11 +196,11 @@ export default function IndexPage() {
   });
 
   const { ref: worksInRef, inView: isWorksInView } = useInView({
-    threshold: 0.25,
+    threshold: 0.2,
   });
 
   const { ref: otherInRef, inView: isOtherInView } = useInView({
-    threshold: 0.5,
+    threshold: 0.3,
   });
 
   useEffect(() => {
@@ -219,31 +220,31 @@ export default function IndexPage() {
   return (
     <SmoothScroll>
         <CustomHeader />
-          <div className="mt-0 sm:mt-20 lg:mt-56">
-            <div className="flex lg:flex-row flex-col justify-end w-full container lg:px-[10%] sm:px-[5%] px-5 gap-x-24">
+          <div className="flex justify-start mt-0 sm:mt-20 lg:mt-56">
+            <div className="flex lg:flex-row flex-col justify-end sm:px-[5%] px-5 gap-x-24 mx-0">
               <div className="bg-transparent lg:sticky top-56 h-fit w-[40%] max-lg:hidden">
                 <div className="flex flex-col gap-y-8">
                   <div>
-                    <h1 onClick={() => scrollToSection(welcomeRef)} className={`bold ${activeSection === 'welcome' ? 'text-white text-5xl' : 'text-[#2f2f2f] text-xl'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}>
-                      .welcome
+                    <h1 onClick={() => scrollToSection(welcomeRef)} className={`sub-text ${activeSection === 'welcome' ? 'text-white text-5xl' : 'text-[#2f2f2f] text-xl'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}>
+                      .WELCOME
                     </h1>
                   </div>
                   <div>
-                    <h1 onClick={() => scrollToSection(worksRef)} className={`bold ${activeSection === 'works' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}>
-                      .projects
+                    <h1 onClick={() => scrollToSection(worksRef)} className={`sub-text ${activeSection === 'works' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}>
+                      .PROJECTS
                     </h1>
                   </div>
                   <div>
-                    <h1 onClick={() => scrollToSection(otherRef)} className={`bold ${activeSection === 'others' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}>
-                      .others
+                    <h1 onClick={() => scrollToSection(otherRef)} className={`sub-text ${activeSection === 'others' ? 'text-5xl text-white' : 'text-xl text-[#2f2f2f]'} transition-all duration-300 cursor-pointer hover:text-white w-fit`}>
+                      .OTHERS
                     </h1>
                   </div>
                 </div>
               </div>
               <div className="z-10 flex-1 w-full max-sm:mt-0 max-lg:mt-28">
                 <motion.div className={`sm:min-h-fit flex flex-col justify-end min-h-screen mb-28 max-sm:mb-0 sub-color max-sm:pb-28 ${activeSection === 'welcome' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="about" ref={(node) => { welcomeInRef(node); welcomeRef.current = node; }}>
-                  <p className='text-xl text-white sub-text'>Software Developer</p>
-                  <p className='mt-2'>I design and developer web and mobile applications with the latest technologies.</p>
+                  <p className='text-xl text-white sub-text'>Software Developer ✦</p>
+                  <p className='mt-2'>Hi! I am <span className='text-white'>Noel Emaas.</span> I design and develop web and mobile applications with the latest technologies.</p>
                 
                   <div className='grid grid-cols-2 gap-6 mt-8 sm:grid-cols-3'>
                     {tools.map((tool, index) => (
@@ -252,7 +253,7 @@ export default function IndexPage() {
                   </div>
                 </motion.div>
                 <motion.div className={`mb-28 sub-color ${activeSection === 'works' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="works" ref={(node) => { worksInRef(node); worksRef.current = node; }}>
-                  <p className='text-xl text-white sub-text'>Highlighted Projects</p>
+                  <p className='text-xl text-white sub-text'>Selected Works ✦</p>
                   <p className='mt-2'>Some projects that I am really proud of.</p>
                 
                   <div className='flex flex-col gap-y-8 mt-8 border-[#2f2f2f]'>
@@ -261,8 +262,8 @@ export default function IndexPage() {
                     ))}
                   </div>
                 </motion.div>
-                <motion.div className={`lg:mb-60 mb-28 sub-color ${activeSection === 'others' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="others" ref={(node) => { otherInRef(node); otherRef.current = node; }}>
-                  <p className='text-xl text-white sub-text'>Other Works</p>
+                <motion.div className={`lg:pb-60 mb-28 sub-color ${activeSection === 'others' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="others" ref={(node) => { otherInRef(node); otherRef.current = node; }}>
+                  <p className='text-xl text-white sub-text'><span></span>Other Works ✦</p>
                   <p className='mt-2'>Other projects that are also worth showcasing.</p>
                 
                   <div className='flex flex-col gap-y-8 mt-8 border-[#2f2f2f]'>

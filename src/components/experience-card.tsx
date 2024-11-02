@@ -4,6 +4,7 @@ export interface ExperienceProps {
   endYear: string;
   role: string;
   company: string;
+  setup: string;
   stack: string[];
   description: string;
 }
@@ -18,27 +19,15 @@ export const SimpleCard = ({title}: {title: string, link?: string}) => {
 }
 
 export default function ExperienceCard (props: ExperienceProps) {
-  const { startYear, endYear, role, company, stack, description } = props;
+  const { startYear, endYear, role, company, stack, description, setup } = props;
 
   return (
-    <div className="flex flex-col sm:flex-row gap-x-10">
-        <div className="flex-none text-xs sub-text sub-color sm:mt-1">
-          <div className="flex gap-x-2">
-            <div>
-              <p className="block sm:hidden">{startYear}</p>
-              <p className="hidden sm:block">{startYear.split(" ")[0]}</p>
-              <p className="hidden sm:block">{startYear.split(" ")[1]}</p>
-            </div>
-            <p>-</p>
-            <div>
-              <p className="block sm:hidden">{endYear}</p>
-              <p className="hidden sm:block">{endYear.split(" ")[0]}</p>
-              <p className="hidden sm:block">{endYear.split(" ")[1]}</p>
-            </div>
-          </div>
-          {/* <p>{startYear.spl} — {endYear}</p> */}
+    <div className="sm:grid grid-cols-3 gap-x-6">
+        <div className="flex-none flex flex-col max-sm:flex-row max-sm:justify-between text-xs sub-text sub-color sm:mt-1">
+          <p>{startYear} — {endYear}</p>
+          <p className="sm:mt-1 uppercase">{setup}</p>
         </div>
-        <div className="flex flex-col w-full grow max-sm:mt-2">
+        <div className="col-span-2 flex flex-col w-full grow max-sm:mt-2">
           <h1 className="sub-text">{role}</h1>
           <h1 className="">{company}</h1>
           <p className="mt-4 text-sm sub-color border-t border-[#2f2f2f] pt-4">{description}</p>
