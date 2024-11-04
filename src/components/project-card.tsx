@@ -12,10 +12,17 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard (props: ProjectCardProps) {
-    const { title, imagePadding, imageStyle, hoverGradient, description, image, year } = props;
+    const { title, imagePadding, imageStyle, hoverGradient, description, image, year, link } = props;
+
+    const onLinkClick = () => {
+        if (link === '#') {
+          return;
+        }
+        window.open(link, '_blank');
+    }
 
     return (
-      <div className="w-full duration-500 cursor-pointer group gap-x-6">
+      <div onClick={onLinkClick} className="w-full duration-500 cursor-pointer group gap-x-6">
         <div className="flex flex-col w-full">
           <div className="bg-[#131313] rounded-md relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-[0.8px] bg-gradient-to-r from-[#0f0f0f] via-[#8f8f8f] to-[#0f0f0f]" />

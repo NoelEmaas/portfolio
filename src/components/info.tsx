@@ -160,10 +160,10 @@ const achievements: AchievementProps[] = [
 
 export default function Info() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const experienceRef = useRef<HTMLDivElement>(null);
-  const achievmentsRef = useRef<HTMLDivElement>(null);
-  const riceRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+  const experienceRef = useRef<HTMLDivElement | null>(null);
+  const achievmentsRef = useRef<HTMLDivElement | null>(null);
+  const riceRef = useRef<HTMLDivElement | null>(null);
   
   const { ref: aboutInViewRef, inView: isAboutInView } = useInView({
     threshold: 1,
@@ -238,7 +238,9 @@ export default function Info() {
                 ))}
               </div>
             </motion.div>
-            <motion.div className={`mb-28 ${activeSection === 'achievements' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="achievements" ref={(node) => { achievementsInViewRef(node); achievmentsRef.current = node; }}>
+            <motion.div className={`mb-28 ${activeSection === 'achievements' ? 'opacity-100' : 'opacity-50'} transition-all duration-300 max-sm:opacity-100`} id="achievements" ref={(node) => { 
+                achievementsInViewRef(node); achievmentsRef.current = node; 
+              }}>
               <p className='block text-xl text-white sub-text'>Achievements ✦</p>
               <div className='flex flex-col mt-8 gap-y-8'>
                 {achievements.map((achievement) => (

@@ -6,9 +6,9 @@ export default function CustomFooter () {
                     <div className="flex items-center justify-between ">
                         <p className="text-xs text-white bold">CONTACTS</p>
                         <div className="flex items-center pl-[85px] text-xs gap-x-6 w-fit sub-color">
-                            <a className="transition-all duration-300 cursor-pointer hover:text-white">.EMAIL</a>
-                            <a className="transition-all duration-300 cursor-pointer hover:text-white">.LINKEDIN</a>
-                            <a className="transition-all duration-300 cursor-pointer hover:text-white">.GITHUB</a>
+                            <a className="transition-all duration-300 cursor-pointer hover:text-white" href="mailto:emaasnoel01@gmail.com">.EMAIL</a>
+                            <a className="transition-all duration-300 cursor-pointer hover:text-white" href="https://linkedin.com/in/noelemaas" target="_blank">.LINKEDIN</a>
+                            <a className="transition-all duration-300 cursor-pointer hover:text-white" href="https://github.com/NoelEmaas" target="_blank">.GITHUB</a>
                         </div>
                     </div>
                     <hr className="w-full mt-8 border-transparent"/>

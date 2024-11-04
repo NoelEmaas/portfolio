@@ -77,6 +77,11 @@ export default function CustomHeader () {
     setIsCollapsed(!isCollapsed);
   }
 
+  const onResumeClick = () => {
+    const url = 'https://drive.google.com/file/d/1WycRwDvI90SQGO_94XvCDSwT9FJXibFa/view?usp=sharing'; 
+    window.open(url, '_blank');
+  }
+
   return (
     <>
       <Menu isCollapsed={isCollapsed} location={location.pathname}/>
@@ -90,7 +95,7 @@ export default function CustomHeader () {
             </div>
           </div>
           <HamburgerIcon onClick={handleCollapsible}/>
-          <button className="relative bg-[#1f1f1f] sm:inline-flex hidden  items-center max-sm:h-[40px] max-sm:w-[40px] justify-center py-2 mx-0 overflow-hidden text-sm font-semibold text-gray-300 transition-all rounded-full px-4 border-none gap-x-2 group">
+          <button onClick={onResumeClick} className="relative bg-[#1f1f1f] sm:inline-flex hidden  items-center max-sm:h-[40px] max-sm:w-[40px] justify-center py-2 mx-0 overflow-hidden text-sm font-semibold text-gray-300 transition-all rounded-full px-4 border-none gap-x-2 group">
             <span className="hidden text-xs sm:block">RESUME</span>
             <div className="relative w-[12px] h-[12px]">
               <FileText className="absolute z-10 w-full h-full text-gray-300 transition-all duration-300 ease-in-out opacity-100 group-hover:opacity-0 group-hover:translate-y-full group-hover:z-0"/>

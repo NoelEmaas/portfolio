@@ -38,42 +38,42 @@ const otherProjects: OtherProject[] = [
       title: 'Typerist',
       description: 'Typing speed test',
       image: TyperistMock,
-      link: '#',
+      link: 'https://noelemaas.github.io/typerist/',
       icon: <Globe className="w-4 h-4 text-white"/>
   },
   {
       title: 'Pokedex',
       description: 'Pokemon encyclopedia',
       image: PokedexMock,
-      link: '#',
+      link: 'https://pokedex-nemaas.vercel.app/',
       icon: <Globe className="w-4 h-4 text-white"/>
   },
   {
       title: 'Spotify Downloader',
       description: 'Download spotify music for free',
       image: SpotifyMock,
-      link: '#',
+      link: 'https://github.com/bibookss/spotify-downloader-web-app',
       icon: <Globe className="w-4 h-4 text-white"/>
   },
   {
       title: 'Amazon Scraper',
       description: 'Scrape Amazon products',
       image: AmazonMock,
-      link: '#',
+      link: 'https://github.com/NoelEmaas/amazon-scraper',
       icon: <Globe className="w-4 h-4 text-white"/>
   },
   {
       title: 'Quizcript',
       description: 'Take quizzes on a terminal',
       image: QuizcriptMock,
-      link: '#',
+      link: 'https://github.com/NoelEmaas/quizcript',
       icon: <SquareTerminal className="w-4 h-4 text-white"/>
   },
   {
       title: 'Draw Guesser',
       description: 'Multiplayer draw guessing game',
       image: DrawguesserMock,
-      link: '#',
+      link: 'https://github.com/NoelEmaas/draw-guesser',
       icon: <Monitor className="w-4 h-4 text-white"/>
   },
 ];
@@ -145,17 +145,6 @@ interface Project {
 
 const projects: Project[] = [
   {
-      title: 'Anzen',
-      year: '2024',
-      imagePadding: 'p-5',
-      imageStyle: 'rounded-lg',
-      hoverGradient: 'bg-[#8FACE3]',
-      description: 'University RFID system displaying real-time time-in/out logs for departments, with user info visible at every gates.',
-      image: AnzenMock,
-      stack: ["React", "Laravel", "Intertia", "PL/SQL", "Typescript", "Tailwind CSS"],
-      link: '#'
-  },
-  {
       title: 'Stubu.AI',
       year: '2024',
       imageStyle: 'rounded-lg shadow-lg drop-shadow-lg',
@@ -163,33 +152,46 @@ const projects: Project[] = [
       description: 'AI-driven app generating personalized lessons, quizzes, and modules tailored to users\' chosen topics.',
       image: StubuMock,
       stack: ["React", "Intertia", "Typescript", "Tailwind CSS"],
+      link: 'https://github.com/STUBU-AI'
+  },
+  {
+      title: 'Anzen',
+      year: '2024',
+      imagePadding: 'p-5',
+      imageStyle: 'rounded-lg',
+      hoverGradient: 'bg-[#8FACE3]',
+      description: 'University RFID system displaying real-time time-in/out logs for departments, with user info visible at every gates. (Link not yet available as it contains private data)',
+      image: AnzenMock,
+      stack: ["React", "Laravel", "Intertia", "PL/SQL", "Typescript", "Tailwind CSS"],
       link: '#'
   },
   {
       title: 'AgriCon',
       year: '2023',
+      imagePadding: 'sm:p-20',
       hoverGradient: 'to-[#0e6e2f] from-[#18453a]',
       description: 'Mobile-first web app that helps farmers to sell products online directly to consumers without a middlemen.',
       image: AgriconMock,
       stack: ["Laravel", "TailwindCSS", "Javascript", "PHP"],
-      link: '#'
+      link: 'https://github.com/CSjianbel/AgriCon'
   },
   {
       title: 'To Do It',
       year: '2022',
+      imagePadding: 'sm:p-20',
       hoverGradient: 'to-sky-800 from-sky-950',
       description: 'Task and notes app with markdown, date assignments, and live weather for organized, context-rich planning',
       image: TodoMock,
       stack: ["Kotlin", "Jetpack Compose", "Firebase"],
-      link: '#'
+      link: 'https://github.com/NoelEmaas/todo-list-app'
   },
 ];
 
 export default function IndexPage() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const welcomeRef = useRef<HTMLDivElement>(null);
-  const worksRef = useRef<HTMLDivElement>(null);
-  const otherRef = useRef<HTMLDivElement>(null);
+  const welcomeRef = useRef<HTMLDivElement | null>(null);
+  const worksRef = useRef<HTMLDivElement | null>(null);
+  const otherRef = useRef<HTMLDivElement | null>(null);
 
   const { ref: welcomeInRef, inView: isWelcomeInView } = useInView({
     threshold: 0.5,

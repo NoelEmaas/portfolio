@@ -9,10 +9,15 @@ interface OtherProjectCardProps {
 }
 
 export default function OtherProjectCard (props: OtherProjectCardProps) {
-    const { title, description, image } = props;
+    const { title, description, image, link } = props;
+
+    const onLinkClick = () => {
+        console.log(link);
+        window.open(link, '_blank');
+    }
 
     return (
-        <div className="relative border-[#1f1f1f] transition-all duration-300 grain-bg grid w-full sm:grid-cols-3 grid-cols-2 overflow-hidden cursor-pointer gap-x-6 group bg-clip-border">
+        <div onClick={onLinkClick} className="relative border-[#1f1f1f] transition-all duration-300 grain-bg grid w-full sm:grid-cols-3 grid-cols-2 overflow-hidden cursor-pointer gap-x-6 group bg-clip-border">
             <div className="absolute w-full h-full grain-bg"/>
             <div className="flex flex-col justify-between w-full sm:col-span-2 border-[#2f2f2f] pt-4 pl-0 transition-all duration-300 border-t">
                 <div className="flex items-center justify-between">

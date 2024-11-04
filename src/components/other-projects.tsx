@@ -46,42 +46,42 @@ const otherProjects: OtherProject[] = [
         title: 'Typerist',
         description: 'Typing speed test',
         image: TyperistMock,
-        link: '#',
+        link: 'https://noelemaas.github.io/typerist/',
         icon: <Globe className="w-4 h-4 text-white"/>
     },
     {
         title: 'Pokedex',
         description: 'Pokemon encyclopedia',
         image: PokedexMock,
-        link: '#',
+        link: 'https://pokedex-nemaas.vercel.app/',
         icon: <Globe className="w-4 h-4 text-white"/>
     },
     {
         title: 'Spotify Downloader',
         description: 'Download spotify music for free',
         image: SpotifyMock,
-        link: '#',
+        link: 'https://github.com/bibookss/spotify-downloader-web-app',
         icon: <Globe className="w-4 h-4 text-white"/>
     },
     {
         title: 'Amazon Scraper',
         description: 'Scrape Amazon products',
         image: AmazonMock,
-        link: '#',
+        link: 'https://github.com/NoelEmaas/amazon-scraper',
         icon: <Globe className="w-4 h-4 text-white"/>
     },
     {
         title: 'Quizcript',
         description: 'Take quizzes on a terminal',
         image: QuizcriptMock,
-        link: '#',
+        link: 'https://github.com/NoelEmaas/quizcript',
         icon: <SquareTerminal className="w-4 h-4 text-white"/>
     },
     {
         title: 'Draw Guesser',
         description: 'Multiplayer draw guessing game',
         image: DrawguesserMock,
-        link: '#',
+        link: 'https://github.com/NoelEmaas/draw-guesser',
         icon: <Monitor className="w-4 h-4 text-white"/>
     },
 ];
