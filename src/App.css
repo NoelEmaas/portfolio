@@ -1,0 +1,35 @@
+@import url('./styles/general-sans.css');
+@import url('./styles/ppneumontreal.css');
+
+
+body {
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--scrollbar));
+    border-radius: 5px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--scrollbar-hover));
+}
+
+#filter {
+    will-change: transform, filter;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    text-rendering: optimizeLegibility;
+}

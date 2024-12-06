@@ -1,0 +1,261 @@
+{
+    "info": {
+        "name": "Noel Emaas",
+        "title": "Software Developer",
+        "pitch": "I design and develop web and mobile applications with the latest technologies.",
+        "contacts": {
+            "email": "emaasnoel01@gmail.com",
+            "linkedin": "https://www.linkedin.com/in/noelemaas",
+            "github": "https://github.com/NoelEmaas"
+        }
+    },
+    "about": {
+        "paragraphs": [
+            "Hi, I’m Noel! I’ve been building web and mobile applications for over two years now, turning my love for coding that started in high school into a fulfilling career. I enjoy creating clean, functional digital solutions—sometimes to solve real world problems, and other times just to make something cool. It keeps things fun, makes them more interesting, and helps me keep learning.",
+            "When I’m not coding, I’m either cycling, catching up on anime, diving into a good manga, or exploring new ways to stay active. These hobbies keep me inspired and balanced."
+        ],
+        "stack": [
+            "React",
+            "React Native",
+            "NextJS",
+            "Tailwind CSS",
+            "Laravel",
+            "Figma"
+        ]
+    },
+    "experiences":  [
+        {
+            "title": "React Native / Firebase Developer Intern",
+            "company": "PrimeAnalytIQ",
+            "link": "",
+            "setup": "remote",
+            "location": "",
+            "startYear": "AUG 2024",
+            "endYear": "NOV 2024",
+            "description": [
+                "Developed reusable frontend components and full mobile screen pages for a restaurant module, designed intuitive user interfaces, and implemented backend logic to record and analyze sales data."
+            ],
+            "stack": ["React Native", "Firebase", "Typescript", "Jest"]
+        },
+        {
+            "title": "Application Developer (Contract)",
+            "company": "Ateneo de Naga University",
+            "link": "",
+            "setup": "hybrid",
+            "location": "",
+            "startYear": "JUN 2024",
+            "endYear": "OCT 2024",
+            "description": [
+                "Designed and developed an RFID system and Admin portal for the university, used by different departments to view the records of individuals (students, employees) that go in and out of the campus."
+            ],
+            "stack": ["Laravel", "React", "Typescript", "Tailwind CSS"]
+        },
+        {
+            "title": "Full Stack Developer Intern",
+            "company": "Old.St Labs",
+            "link": "",
+            "setup": "remote",
+            "location": "",
+            "startYear": "JUN 2024",
+            "endYear": "AUG 2024",
+            "description": [
+                "Learned database and system design principles for scalable web applications and developed backend APIs, wrote unit tests, and implemented frontend components for client projects."
+            ],
+            "stack": ["React", "Next.js", "Nest.js", "Typescript", "DynamoDB", "Jest"]
+        },
+        {
+            "title": "Application Developer Intern",
+            "company": "Ateneo de Naga University",
+            "link": "",
+            "setup": "hybrid",
+            "location": "",
+            "startYear": "JUL 2023",
+            "endYear": "JUN 2024",
+            "description": [
+                "Designed and implemented the front end of a procurement and asset management system for the university."
+            ],
+            "stack": ["Laravel", "PHP", "Javascript"]
+        },
+        {
+            "title": "Android Developer",
+            "company": "CodeArmy",
+            "link": "",
+            "setup": "remote",
+            "location": "",
+            "startYear": "SEPT 2022",
+            "endYear": "APR 2023",
+            "description": [
+                "Developed a task management Android application. Used Firebase for deployment, firestore for database, and implemented Facebook User Authentication."
+            ],
+            "stack": ["Kotlin", "Jetpack Compose", "Firebase"]
+        }
+    ],
+    "projects": [
+        {
+            "title": "Stubu.AI",
+            "year": "2024",
+            "description": "AI-driven app generating personalized lessons, quizzes, and modules tailored to users' chosen topics.",
+            "image": "stubu_mock_final",
+            "imageBgColorClass": "bg-indigo-300",
+            "stack": ["React", "Typescript", "Tailwind CSS", "NodeJS"],
+            "link": "https://drive.google.com/file/d/1oJye9KaOR9jIPAB3AncufplSEd256RLh/view?usp=sharing"
+        },
+        {
+            "title": "Anzen",
+            "year": "2024",
+            "description": "University RFID system displaying real-time time-in/out logs for departments, with user info visible at every gates. (Link not yet available as it contains private data)",
+            "image": "anzen_mock",
+            "imageBgColorClass": "bg-blue-400",
+            "stack": ["React", "Laravel", "Intertia", "Oracle", "Typescript", "Tailwind"],
+            "link": "#"
+        },
+        {
+            "title": "FlavorShare",
+            "year": "2024",
+            "description": "Browse by cuisine, ingredient, or dietary preference, and find your next favorite dish.",
+            "image": "flavorshare_mock",
+            "imageBgColorClass": "bg-orange-300",
+            "stack": ["React", "Typescript", "Tailwind", "Vite"],
+            "link": "https://nemaas-flavorshare.vercel.app/"
+        },
+        {
+            "title": "MediGuide",
+            "year": "2023",
+            "description": "Cross-Platform AI powered chatbot mobile app that provides preliminary medical diagnosis and advice based on user symptoms.",
+            "image": "mediguide_mock",
+            "imageBgColorClass": "bg-cyan-500",
+            "stack": ["Flutter", "OpenAI", "Firebase"],
+            "link": "https://drive.google.com/file/d/14WMHii02Sk9aohdAXoGyjzzgtDOtQ777/view?usp=sharing"
+        },
+        {
+            "title": "AgriCon",
+            "year": "2023",
+            "description": "Mobile-first web app that helps farmers to sell products online directly to consumers without a middlemen.",
+            "image": "agricon_mock",
+            "imageBgColorClass": "from-green-300 to-green-400",
+            "stack": ["Laravel", "TailwindCSS", "Javascript", "PHP"],
+            "link": "https://drive.google.com/file/d/18Iz7Joa_04EfVo840fQ3_egzpEJfFakG/view?usp=sharing"
+        },
+        {
+            "title": "To Do It",
+            "year": "2022",
+            "description": "Task and notes app with markdown, date assignments, and live weather for organized, context-rich planning",
+            "image": "todo_mock",
+            "imageBgColorClass": "bg-sky-500",
+            "stack": ["Kotlin", "Jetpack Compose", "Firebase"],
+            "link": "https://github.com/NoelEmaas/todo-list-app"
+        }
+    ],
+    "otherProjects": [
+        {
+            "title": "Typerist",
+            "description": "Typing speed test",
+            "image": "typerist_mock",
+            "link": "https://noelemaas.github.io/typerist/"
+        },
+        {
+            "title": "Pokedex",
+            "description": "Pokemon encyclopedia",
+            "image": "pokedex_mock",
+            "link": "https://pokedex-nemaas.vercel.app/"
+        },
+        {
+            "title": "Spotify Downloader",
+            "description": "Download spotify music for free",
+            "image": "spotify_mock",
+            "link": "https://github.com/bibookss/spotify-downloader-web-app"
+        },
+        {
+            "title": "Amazon Scraper",
+            "description": "Scrape Amazon products",
+            "image": "amazon_mock",
+            "link": "https://github.com/NoelEmaas/amazon-scraper"
+        },
+        {
+            "title": "Draw Guesser",
+            "description": "Multiplayer draw guessing game",
+            "image": "drawguesser_mock",
+            "link": "https://github.com/NoelEmaas/draw-guesser"
+        }
+    ],
+    "achievements": [
+        {
+            "date": "MAY 2024",
+            "title": "Idea2Startup Grantee",
+            "description": "Funded and awarded by local city government of Naga to develop an AI powered web application that provides easy access of education for all.",
+            "images": [
+                "startup_1",
+                "startup_2"
+            ]
+        },
+        {
+            "date": "NOV 2023",
+            "title": "LAAD Festival Hackathon Champion",
+            "description": "Placed 1st in the LAAD Festival Hackathon for developing a mobile first web application that helps local farmers sell their products without middlemen.",
+            "images": [
+                "hackathon_1",
+                "hackathon_2"
+            ]
+        },
+        {
+            "date": "MAY 2023",
+            "title": "Ateneo Computer Programming Challenge 2023 Champion",
+            "description": "Placed 1st in a Team Based Competitive Programming Competition against other universities across the Bicol region.",
+            "images": [
+                "apc_1",
+                "apc_2",
+                "apc_3"
+            ]
+        },
+        {
+            "date": "DEC 2021",
+            "title": "Ateneo Computer Programming Competition Freshmen Edition - 2nd Place",
+            "description": "Placed 2nd in am individual Competitive Programming Competition against other freshmen within the university.",
+            "images": [
+                "acpc_freshmen"
+            ]
+        }
+    ],
+    "setup": {
+        "os": "LINUX MINT",
+        "wm": "Herbstluftwm",
+        "terminal": "Kitty",
+        "panel": "Polybar",
+        "launcher": "Rofi",
+        "editor": "Cursor",
+        "browser": "Zen Browser",
+        "shell": "Zsh",
+        "current": [
+            "wave_rice",
+            "wave_rice_2"
+        ],
+        "past": [
+            {
+                "image": "border_rice",
+                "imageFull": "border_rice_full"
+            },
+            {
+                "image": "comfy_rice"
+            },
+            {
+                "image": "forest_rice"
+            },
+            {
+                "image": "i3_rice"
+            },
+            {
+                "image": "mountain_rice"
+            },
+            {
+                "image": "oldmodern_rice"
+            },
+            {
+                "image": "rainy_rice"
+            },
+            {
+                "image": "ronin_rice",
+                "imageFull": "ronin_rice_full"
+            }
+        ]
+    }
+}
