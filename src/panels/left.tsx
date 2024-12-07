@@ -23,7 +23,6 @@ const Contacts = (contacts: { [key: string]: string }) => {
                         {contact.toUpperCase()}
                     </a>
                 );
-
                 return (
                     <a key={index} href={contacts[contact]} target="_blank" rel="noreferrer" className="text-xs font-medium transition-all duration-300 text-subtle hover:text-white">
                         {contact.toUpperCase()}
@@ -56,6 +55,14 @@ function LeftPanel (props: LeftPanelProps) {
                 <h1 className='text-5xl font-bold'>{name}</h1>
                 <p className='mt-1 text-xl font-medium'>{title}</p>
                 <p className='w-[300px] text-subtle'>{pitch}</p>
+                <a 
+                    href="https://drive.google.com/file/d/1XJte_afn0xRNkWgWCXPTLU3RjMdbXfAZ/view?usp=sharing"
+                    className="px-3 py-1 mt-4 text-xs font-medium transition-all duration-300 rounded-full text-background bg-foreground w-fit" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                >
+                    RESUME
+                </a>
                 <div className="block pt-6 mt-4 border-t border-border lg:hidden">
                     <Contacts {...contacts} />
                 </div>
