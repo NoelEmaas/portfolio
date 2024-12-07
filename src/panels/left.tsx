@@ -56,7 +56,7 @@ function LeftPanel (props: LeftPanelProps) {
                 <p className='mt-1 text-xl font-medium'>{title}</p>
                 <p className='w-[300px] text-subtle'>{pitch}</p>
                 <a 
-                    href="https://drive.google.com/file/d/1XJte_afn0xRNkWgWCXPTLU3RjMdbXfAZ/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1V-3FaKL48-LMBKBOamLbrGTt8Y6heGaC/view?usp=sharing"
                     className="px-3 py-1 mt-4 text-xs font-medium transition-all duration-300 rounded-full text-background bg-foreground w-fit" 
                     target="_blank" 
                     rel="noreferrer" 
